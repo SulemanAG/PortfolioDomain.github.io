@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suleman Agasimani - Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: linear-gradient(to bottom right, #1e3c72, #2a5298);
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        /* Headers */
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin: 20px 0;
+            font-size: 2em;
+        }
+
+        h3 {
+            margin-top: 30px;
+            font-size: 1.5em;
+            color: #3498db;
+        }
+
+        /* Text */
+        p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            font-size: 1.1em;
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        ul li:before {
+            content: '•';
+            color: #3498db;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Links */
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Definition List */
+        dl {
+            margin: 20px 0;
+        }
+
+        dl dt {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 10px;
+        }
+
+        dl dd {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            color: #555;
+        }
+
+        /* Quote */
+        blockquote {
+            font-style: italic;
+            color: #555;
+            border-left: 5px solid #3498db;
+            background: #f9f9f9;
+            padding: 10px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        /* Buttons for Links */
+        .button {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1em;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #217dbb;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        footer a {
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Portfolio</h1>
+
+        <h2>Hello, I'm Suleman Agasimani 👋</h2>
+        <p>I am passionate about technology and problem-solving. Here's a glimpse of my work:</p>
+
+        <h2>🛠️ Projects</h2>
+        <h3>KWIN City</h3>
+        <p><strong>About KWIN City</strong><br>
+        Our city is designed for a brighter tomorrow. Every step you take here leads to opportunities, learning, and innovation. KWIN City emphasizes eco-friendly and people-centric designs while focusing on collaboration and coexistence. It empowers its residents through technology and innovation to help create a sustainable future.</p>
+
+        <p><strong>Strategic Location</strong><br>
+        KWIN City enjoys a prime location that makes it an ideal hub for growth and development. It is conveniently located just 45 minutes away from Kempegowda International Airport, providing easy access for international travelers and business ventures. Moreover, KWIN City is well-connected via major highways and rail routes, ensuring seamless transportation and connectivity to other parts of the region and beyond. This strategic location enhances both its accessibility and its potential for future economic and technological growth.</p>
+
+        <h2>🚀 Skills</h2>
+        <ul>
+            <li>C++, Python, JavaScript</li>
+            <li>Data Structures and Algorithms</li>
+            <li>Web Development (React.js, Node.js)</li>
+        </ul>
+
+        <h2>🌐 Find Me Online</h2>
+        <a href="https://github.com/suleman-agasimani" target="_blank" class="button">GitHub</a>
+
+        <h2>Portfolio Topic</h2>
+        <dl>
+            <dt>Course Name</dt>
+            <dd>Design and Analysis of Algorithm</dd>
+            <dt>Course Code</dt>
+            <dd>24ECAC203</dd>
+            <dt>Name</dt>
+            <dd>Suleman Agasimani</dd>
+            <dt>SRN</dt>
+            <dd>01FE23BCI071</dd>
+            <dt>Course Instructor</dt>
+            <dd>KMMR</dd>
+            <dt>University</dt>
+            <dd>KLE Technological University</dd>
+            <dt>Portfolio Topic/Domain</dt>
+            <dd>KWIN City</dd>
+        </dl>
+
+        <blockquote>“The only way to do great work is to love what you do.
