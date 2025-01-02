@@ -36,7 +36,6 @@
             font-size: 16px;
             color: #555;
             line-height: 1.6;
-            margin-bottom: 20px;  /* Added spacing between paragraphs */
         }
         .theme-toggle {
             position: fixed;
@@ -48,12 +47,11 @@
 
         /* Light Mode Styles */
         body.light-mode {
-            background-color: #f4f4f4;  /* Light background */
+            background-color: #f4f4f4;
             color: #333;
         }
         section.light-mode {
             background-color: #fff;
-            color: #333;
         }
 
         /* Dark Mode Styles */
@@ -80,28 +78,32 @@
     <h2>Optimizing City-Wide Internet Connectivity</h2>
     <p><strong>Explanation:</strong> In smart cities, internet connectivity is essential to support a range of services, from traffic management to health and education. The goal of this project is to ensure that all residents of the city have access to high-speed internet by strategically placing Wi-Fi hotspots. This can be achieved through the application of Minimum Spanning Tree (MST) algorithms, which help minimize the total infrastructure cost while maintaining optimal coverage of the urban area.</p>
     
-    <p><strong>How to Implement:</strong> 
-    - <strong> Mapping the Area</strong> : Begin by identifying key locations across the city that need coverage, such as public areas, schools, hospitals, and high-traffic zones. This requires the use of geographic data systems (GIS) to map out the city’s roads, buildings, and potential hotspots.
-
-    - <strong> Modeling as a Graph</strong> : Treat the problem as a graph, where each node represents a potential location for a Wi-Fi hotspot, and edges represent the cost (distance or infrastructure) between these locations. 
+    <p><strong>How to Implement:</strong></p>
+    <ul>
+        <li><strong>Mapping the Area:</strong> Begin by identifying key locations across the city that need coverage, such as public areas, schools, hospitals, and high-traffic zones. This requires the use of geographic data systems (GIS) to map out the city’s roads, buildings, and potential hotspots.</li>
         
-    - <strong> Choosing the Algorithm</strong> : Use either Prim’s or Kruskal’s algorithm to determine the MST. Both algorithms have their merits. Prim’s algorithm starts with a node and explores the least cost edges to connect all nodes, while Kruskal’s algorithm sorts all edges by weight and then selects the least cost edges to form the MST. In this case, the algorithm would minimize the total distance for wiring and installation.
-    
-    - <strong> Placing Hotspots</strong> : The selected locations based on the MST will then be the ideal spots for Wi-Fi installations. These locations should be in close proximity to areas with high foot traffic while minimizing redundancy.
-
-    - <strong> Dynamic Updates with Traffic Data</strong> : To improve the network and adapt to changing conditions (e.g., construction, population growth, seasonal events), the system should integrate real-time traffic data, adjusting hotspot placements as needed.
+        <li><strong>Modeling as a Graph:</strong> Treat the problem as a graph, where each node represents a potential location for a Wi-Fi hotspot, and edges represent the cost (distance or infrastructure) between these locations.</li>
+        
+        <li><strong>Choosing the Algorithm:</strong> Use either Prim’s or Kruskal’s algorithm to determine the MST. Both algorithms have their merits. Prim’s algorithm starts with a node and explores the least cost edges to connect all nodes, while Kruskal’s algorithm sorts all edges by weight and then selects the least cost edges to form the MST. In this case, the algorithm would minimize the total distance for wiring and installation.</li>
+        
+        <li><strong>Placing Hotspots:</strong> The selected locations based on the MST will then be the ideal spots for Wi-Fi installations. These locations should be in close proximity to areas with high foot traffic while minimizing redundancy.</li>
+        
+        <li><strong>Dynamic Updates with Traffic Data:</strong> To improve the network and adapt to changing conditions (e.g., construction, population growth, seasonal events), the system should integrate real-time traffic data, adjusting hotspot placements as needed.</li>
+    </ul>
 </section>
 
 <section>
     <h2>Optimizing Waste Management Routes</h2>
     <p><strong>Explanation:</strong> Efficient waste management is a critical component of a sustainable urban environment. This project aims to optimize the waste collection process by applying Dijkstra’s Algorithm, a well-known graph search algorithm that calculates the shortest paths from a source to all other nodes. In this case, the waste collection trucks are the “nodes,” and the roads connecting the collection points are the “edges.” The goal is to minimize the total travel distance, reducing fuel consumption, emissions, and operational costs.</p>
     
-    <p><strong>How to Implement:</strong>
-    - <strong> Graph Representation</strong> : The city’s road network is represented as a graph, where each intersection or waste collection point is a node, and each road is an edge with a weight corresponding to the distance or travel time.
-    
-    - <strong> Running Dijkstra’s Algorithm</strong> : To find the optimal routes, Dijkstra’s algorithm is applied to calculate the shortest paths from the waste collection depot to all the waste collection points across the city. By calculating the shortest path for each waste collection vehicle, the total travel distance and fuel consumption are minimized.
-    
-    - <strong> Incorporating Real-Time Data</strong> : Real-time traffic data is incorporated into the algorithm to adjust routes dynamically. This is crucial because traffic conditions, road closures, or accidents can significantly impact the efficiency of waste collection. The system can update the optimal route to avoid congestion or other delays.
+    <p><strong>How to Implement:</strong></p>
+    <ul>
+        <li><strong>Graph Representation:</strong> The city’s road network is represented as a graph, where each intersection or waste collection point is a node, and each road is an edge with a weight corresponding to the distance or travel time.</li>
+        
+        <li><strong>Running Dijkstra’s Algorithm:</strong> To find the optimal routes, Dijkstra’s algorithm is applied to calculate the shortest paths from the waste collection depot to all the waste collection points across the city. By calculating the shortest path for each waste collection vehicle, the total travel distance and fuel consumption are minimized.</li>
+        
+        <li><strong>Incorporating Real-Time Data:</strong> Real-time traffic data is incorporated into the algorithm to adjust routes dynamically. This is crucial because traffic conditions, road closures, or accidents can significantly impact the efficiency of waste collection. The system can update the optimal route to avoid congestion or other delays.</li>
+    </ul>
 </section>
 
 <script src="script.js"></script>
