@@ -1,3 +1,81 @@
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1a73e8, #4285f4);
+    color: #fff;
+    transition: background 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 3rem;
+    background: rgba(0, 0, 0, 0.7);
+    border-bottom: 2px solid #fff;
+    animation: slideDown 1s ease-out;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    margin: 0 15px;
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background: #fff;
+    color: #1a73e8;
+}
+
+/* Personal Details Section */
+#personal-details {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#personal-details ul {
+    list-style: none;
+}
+
+#personal-details li {
+    margin-bottom: 0.8rem;
+}
+
 /* Find Me Online Section */
 #find-me-online {
     margin: 2rem auto;
@@ -33,4 +111,70 @@
 
 #find-me-online a:hover {
     color: #ff5722;
+}
+
+/* Project Section */
+#project {
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 1.2s ease;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #ffeb3b;
+    color: #000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(360deg);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ body {
+    background: #fff;
+    color: #000;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
