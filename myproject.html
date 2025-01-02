@@ -98,22 +98,47 @@
             margin-top: 10px;
             padding-left: 20px;
         }
+        
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: fixed; /* Fixed position */
+            bottom: 20px; /* Distance from bottom */
+            right: 20px; /* Distance from right */
+            background: rgba(255, 255, 255, 0.1); /* Background for button */
+            color: #e0e0e0; /* Button text color */
+            border: none; /* No border */
+            border-radius: 50%; /* Rounded button */
+            width: 40px; /* Width */
+            height: 40px; /* Height */
+            display: flex; /* Flexbox for alignment */
+            justify-content: center; /* Center icon horizontally */
+            align-items: center; /* Center icon vertically */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background 0.3s; /* Smooth background transition */
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2); /* Brighten on hover */
+        }
+
     </style>
 </head>
 <body class="light-mode">
 <header>
+    <h1>Projects Managed by Me</h1>
     <nav>
         <ui>
-            <li><a href="index.html">back to profile</li>
-            <li><a href="project.html">Projects</li>
-            <li><a href="learning.html">Learning outcomes</li>
+            <li><a href="index.html">Back to Profile</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="learning.html">Learning Outcomes</a></li>
         </ui>
     </nav>
-<header>
-    <h1>Projects Managed by Me</h1>
-
-
-
     <nav>
         <a href="#optimizing-connectivity">Optimizing Connectivity</a>
         <a href="#optimizing-waste">Optimizing Waste Management</a>
@@ -185,11 +210,17 @@
     </section>
 </main>
 
+<!-- Footer -->
 <footer>
     <div class="container">
         <p>&copy; 2024 Suleman Agasimani. All rights reserved.</p>
     </div>
 </footer>
+
+<!-- Theme Toggle Button -->
+<div class="theme-toggle" onclick="toggleTheme()">
+    <i class="fas fa-moon"></i>
+</div>
 
 </body>
 </html>
