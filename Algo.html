@@ -3,211 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algorithms and Their Efficiencies</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8fafc;
-            color: #1e293b;
-        }
-        header {
-            background-color: #0f172a;
-            color: #ffffff;
-            padding: 1rem;
-            text-align: center;
-        }
-        section {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background-color: #ffffff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        h2 {
-            color: #0f172a;
-            border-bottom: 2px solid #3b82f6;
-            padding-bottom: 0.5rem;
-        }
-        pre {
-            background-color: #f1f5f9;
-            padding: 1rem;
-            overflow: auto;
-            border-radius: 4px;
-        }
-        .code {
-            color: #2563eb;
-        }
-        .algorithm {
-            margin-bottom: 2rem;
-        }
-        .efficiency {
-            font-weight: bold;
-            color: #2563eb;
-        }
-    </style>
+    <title>Algorithms - Suleman Agasimani</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
-<body>
+<body class="dark-mode">
+    <!-- Header Section -->
     <header>
-        <h1>Algorithms and Their Efficiencies</h1>
+        <h1>Algorithms</h1>
+        <p>Explore the efficiency and applications of various algorithms</p>
+        <nav>
+            <a href="#sorting-algorithms">Sorting Algorithms</a>
+            <a href="#greedy-algorithms">Greedy Algorithms</a>
+            <a href="index.html">Back to Portfolio</a>
+        </nav>
     </header>
-    <section>
+
+    <!-- Sorting Algorithms Section -->
+    <section id="sorting-algorithms">
         <h2>Sorting Algorithms</h2>
+        <p>Sorting algorithms are fundamental in computer science and are used to arrange data in a particular order. Below are the key sorting algorithms, their efficiencies, and implementations:</p>
 
-        <div class="algorithm">
-            <h3>1. Merge Sort</h3>
-            <p>
-                <strong>Efficiency:</strong> O(n log n) in all cases (best, average, worst).<br>
-                <strong>Why It Is Used:</strong> Merge Sort is stable and performs well on large datasets.<br>
-                <strong>How It Is Used:</strong> It divides the array into halves, recursively sorts each half, and merges them.
-            </p>
-            <pre>
-<code class="code">function mergeSort(arr) {
-    if (arr.length <= 1) return arr;
+        <h3>Bubble Sort</h3>
+        <p><strong>Efficiency:</strong> O(n^2) in worst and average cases, O(n) in best case.<br>
+        <strong>Use:</strong> Educational purposes and small datasets.</p>
+        <pre><code>
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+        return arr
+        </code></pre>
 
-    const mid = Math.floor(arr.length / 2);
-    const left = mergeSort(arr.slice(0, mid));
-    const right = mergeSort(arr.slice(mid));
+        <h3>Merge Sort</h3>
+        <p><strong>Efficiency:</strong> O(n log n) in all cases.<br>
+        <strong>Use:</strong> Large datasets requiring stable sorting.</p>
+        <pre><code>
+def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr)//2
+        L = arr[:mid]
+        R = arr[mid:]
 
-    return merge(left, right);
-}
+        merge_sort(L)
+        merge_sort(R)
 
-function merge(left, right) {
-    let sorted = [];
-    while (left.length && right.length) {
-        if (left[0] < right[0]) {
-            sorted.push(left.shift());
-        } else {
-            sorted.push(right.shift());
-        }
-    }
-    return [...sorted, ...left, ...right];
-}
-</code>
-            </pre>
-        </div>
+        i = j = k = 0
+        while i < len(L) and j < len(R):
+            if L[i] < R[j]:
+                arr[k] = L[i]
+                i += 1
+            else:
+                arr[k] = R[j]
+                j += 1
+            k += 1
 
-        <div class="algorithm">
-            <h3>2. Quick Sort</h3>
-            <p>
-                <strong>Efficiency:</strong> O(n log n) on average, O(n²) in the worst case.<br>
-                <strong>Why It Is Used:</strong> Quick Sort is efficient and performs in-place sorting.<br>
-                <strong>How It Is Used:</strong> It selects a pivot and partitions the array around it.
-            </p>
-            <pre>
-<code class="code">function quickSort(arr) {
-    if (arr.length <= 1) return arr;
+        while i < len(L):
+            arr[k] = L[i]
+            i += 1
+            k += 1
 
-    const pivot = arr[arr.length - 1];
-    const left = arr.filter((el, i) => el <= pivot && i !== arr.length - 1);
-    const right = arr.filter(el => el > pivot);
+        while j < len(R):
+            arr[k] = R[j]
+            j += 1
+            k += 1
+        return arr
+        </code></pre>
 
-    return [...quickSort(left), pivot, ...quickSort(right)];
-}
-</code>
-            </pre>
-        </div>
-
-        <div class="algorithm">
-            <h3>3. Bubble Sort</h3>
-            <p>
-                <strong>Efficiency:</strong> O(n²) in the average and worst cases.<br>
-                <strong>Why It Is Used:</strong> Simple to implement for small datasets.<br>
-                <strong>How It Is Used:</strong> It repeatedly swaps adjacent elements if they are in the wrong order.
-            </p>
-            <pre>
-<code class="code">function bubbleSort(arr) {
-    let swapped;
-    do {
-        swapped = false;
-        for (let i = 0; i < arr.length - 1; i++) {
-            if (arr[i] > arr[i + 1]) {
-                [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
-                swapped = true;
-            }
-        }
-    } while (swapped);
-    return arr;
-}
-</code>
-            </pre>
-        </div>
+        <h3>Quick Sort</h3>
+        <p><strong>Efficiency:</strong> O(n log n) on average, O(n^2) in the worst case.<br>
+        <strong>Use:</strong> Fast in practice for large datasets.</p>
+        <pre><code>
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr[0]
+        less = [x for x in arr[1:] if x <= pivot]
+        greater = [x for x in arr[1:] if x > pivot]
+        return quick_sort(less) + [pivot] + quick_sort(greater)
+        </code></pre>
     </section>
 
-    <section>
+    <!-- Greedy Algorithms Section -->
+    <section id="greedy-algorithms">
         <h2>Greedy Algorithms</h2>
+        <p>Greedy algorithms solve optimization problems by making the locally optimal choice at each stage. Below are common greedy algorithms and their implementations:</p>
 
-        <div class="algorithm">
-            <h3>1. Prim's Algorithm</h3>
-            <p>
-                <strong>Efficiency:</strong> O(E log V) using priority queues.<br>
-                <strong>Why It Is Used:</strong> To find a Minimum Spanning Tree (MST) of a graph.<br>
-                <strong>How It Is Used:</strong> It starts from an arbitrary node and grows the MST by adding the smallest edge.
-            </p>
-            <pre>
-<code class="code">function primsAlgorithm(graph) {
-    const mst = [];
-    const visited = new Set();
-    const edges = [[0, null]];
+        <h3>Prim's Algorithm</h3>
+        <p><strong>Efficiency:</strong> O(E log V) using a priority queue.<br>
+        <strong>Use:</strong> Finding the Minimum Spanning Tree (MST) of a graph.</p>
+        <pre><code>
+def prim_mst(graph):
+    import heapq
+    start_node = 0
+    visited = set()
+    mst = []
+    edges = [(0, start_node)]
 
-    while (edges.length) {
-        const [weight, to] = edges.shift();
+    while edges:
+        weight, node = heapq.heappop(edges)
+        if node not in visited:
+            visited.add(node)
+            mst.append((weight, node))
+            for next_node, next_weight in graph[node]:
+                if next_node not in visited:
+                    heapq.heappush(edges, (next_weight, next_node))
+    return mst
+        </code></pre>
 
-        if (visited.has(to)) continue;
-        visited.add(to);
-        mst.push([weight, to]);
+        <h3>Kruskal's Algorithm</h3>
+        <p><strong>Efficiency:</strong> O(E log E) where E is the number of edges.<br>
+        <strong>Use:</strong> Finding the Minimum Spanning Tree (MST) of a graph.</p>
+        <pre><code>
+def kruskal_mst(graph):
+    parent = {}
+    def find(n):
+        while parent[n] != n:
+            n = parent[n]
+        return n
 
-        for (let [neighbor, weight] of graph[to]) {
-            if (!visited.has(neighbor)) {
-                edges.push([weight, neighbor]);
-                edges.sort((a, b) => a[0] - b[0]);
-            }
-        }
-    }
-    return mst;
-}
-</code>
-            </pre>
-        </div>
+    def union(n1, n2):
+        p1 = find(n1)
+        p2 = find(n2)
+        parent[p2] = p1
 
-        <div class="algorithm">
-            <h3>2. Kruskal's Algorithm</h3>
-            <p>
-                <strong>Efficiency:</strong> O(E log E) due to sorting edges.<br>
-                <strong>Why It Is Used:</strong> To find the MST by adding the smallest edges while avoiding cycles.<br>
-                <strong>How It Is Used:</strong> It sorts all edges and uses union-find to add edges to the MST.
-            </p>
-            <pre>
-<code class="code">function kruskalsAlgorithm(edges, numVertices) {
-    const sortedEdges = edges.sort((a, b) => a.weight - b.weight);
-    const parent = Array.from({ length: numVertices }, (_, i) => i);
+    edges = sorted(graph, key=lambda x: x[2])
+    for node in graph:
+        parent[node] = node
 
-    function find(v) {
-        if (parent[v] === v) return v;
-        return (parent[v] = find(parent[v]));
-    }
+    mst = []
+    for u, v, weight in edges:
+        if find(u) != find(v):
+            union(u, v)
+            mst.append((u, v, weight))
+    return mst
+        </code></pre>
 
-    function union(v1, v2) {
-        const root1 = find(v1);
-        const root2 = find(v2);
-        if (root1 !== root2) parent[root1] = root2;
-    }
+        <h3>Huffman Coding</h3>
+        <p><strong>Efficiency:</strong> O(n log n) due to priority queue operations.<br>
+        <strong>Use:</strong> Data compression and encoding.</p>
+        <pre><code>
+def huffman_coding(frequencies):
+    import heapq
+    heap = [[weight, [symbol, '']] for symbol, weight in frequencies.items()]
+    heapq.heapify(heap)
 
-    const mst = [];
-    for (let { src, dest, weight } of sortedEdges) {
-        if (find(src) !== find(dest)) {
-            union(src, dest);
-            mst.push({ src, dest, weight });
-        }
-    }
-    return mst;
-}
-</code>
-            </pre>
-        </div>
+    while len(heap) > 1:
+        lo = heapq.heappop(heap)
+        hi = heapq.heappop(heap)
+        for pair in lo[1:]:
+            pair[1] = '0' + pair[1]
+        for pair in hi[1:]:
+            pair[1] = '1' + pair[1]
+        heapq.heappush(heap, [lo[0] + hi[0]] + lo[1:] + hi[1:])
+
+    return sorted(heapq.heappop(heap)[1:], key=lambda p: (len(p[-1]), p))
+        </code></pre>
     </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Suleman Agasimani. All rights reserved.
+    </footer>
+
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle" onclick="toggleTheme()">
+        🌙
+    </div>
 </body>
 </html>
