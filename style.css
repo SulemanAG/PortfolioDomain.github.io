@@ -7,8 +7,6 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #1a73e8, #4285f4);
-    color: #fff;
     transition: background 0.3s ease, color 0.3s ease;
     overflow-x: hidden;
 }
@@ -67,6 +65,7 @@ section {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     animation: fadeIn 1.2s ease;
+    transition: all 0.3s ease;
 }
 
 section h2 {
@@ -81,7 +80,7 @@ section p {
     line-height: 1.8;
 }
 
-/* Personal Details */
+/* Personal Details Section */
 #personal-details ul {
     list-style: none;
     margin-top: 1rem;
@@ -110,25 +109,6 @@ section p {
     background: #ff7043;
     transform: scale(1.1);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
-
-/* Skills */
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-}
-
-.skill {
-    background: #fff;
-    color: #1a73e8;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer */
