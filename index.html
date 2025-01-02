@@ -3,46 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <title>Suleman Agasimani - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <!-- Theme Toggle Button -->
-    <div class="theme-toggle">
-        🌞
-    </div>
+<body class="light">
 
-    <!-- Header -->
     <header>
-        <h1>Suleman Agasimani's Portfolio</h1>
-        <p>Explore my journey and projects in Design and Analysis of Algorithms.</p>
+        <h1>Suleman Agasimani</h1>
+        <p>Your gateway to creativity and innovation</p>
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#find-me">Find Me Online</a>
+            <a href="#skills">Skills</a>
+        </nav>
     </header>
 
-    <!-- Section to Add Course Details -->
-    <section id="course-details">
-        <h2>Course Details</h2>
-        <div class="details">
-            <p><strong>Name:</strong> Suleman Agasimani</p>
-            <p><strong>SRN:</strong> 01FE23BCI071</p>
-            <p><strong>Course Name:</strong> Design And Analysis Of Algorithms</p>
-            <p><strong>Course Code:</strong> 24ECAC203</p>
-            <p><strong>Course Instructor:</strong> K.M.M.Rajashekharaiah</p>
-            <p><strong>University:</strong> KLE Technological University</p>
-            <p><strong>Portfolio Topic/Domain:</strong> DAA Course Project</p>
-        </div>
-    </section>
+    <main>
+        <!-- About Me Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello, I'm Suleman Agasimani, a passionate technologist and problem-solver. Discover my journey and projects.</p>
+            <a href="projects.html" class="button">Explore My Projects</a>
+        </section>
 
-    <!-- Add any random image section here in future -->
-    <section class="random-images">
-        <!-- Future random images will go here -->
-    </section>
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>My Skills</h2>
+            <div class="skills">
+                <span class="skill">C++</span>
+                <span class="skill">Python</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">React.js</span>
+                <span class="skill">Node.js</span>
+                <span class="skill">Algorithms</span>
+            </div>
+        </section>
+
+        <!-- Project Section -->
+        <section id="project">
+            <h2>Project Section</h2>
+            <p>Details of the project will go here.</p>
+        </section>
+
+        <!-- Find Me Online Section -->
+        <section id="find-me">
+            <h2>Find Me Online</h2>
+            <div class="links">
+                <a href="https://github.com/suleman-agasimani" target="_blank" class="button">GitHub</a>
+                <a href="https://linkedin.com/in/suleman-agasimani" target="_blank" class="button">LinkedIn</a>
+                <a href="mailto:suleman.agasimani@example.com" class="button">Email Me</a>
+            </div>
+        </section>
+
+        <!-- Personal Details Section -->
+        <section id="personal-details">
+            <h2>Personal Details</h2>
+            <ul>
+                <li><strong>Name:</strong> Suleman Agasimani</li>
+                <li><strong>SRN:</strong> 01FE23BCI071</li>
+                <li><strong>Course Name:</strong> Design And Analysis Of Algorithms</li>
+                <li><strong>Course Code:</strong> 24ECAC203</li>
+                <li><strong>Course Instructor:</strong> K.M.M.Rajashekharaiah</li>
+                <li><strong>University:</strong> KLE Technological University</li>
+                <li><strong>Portfolio Topic/Domain:</strong> DAA Course Project</li>
+            </ul>
+        </section>
+
+        <section id="quote">
+            <blockquote>
+                “The only way to do great work is to love what you do.” – Steve Jobs
+            </blockquote>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Suleman Agasimani | All rights reserved.</p>
+        &copy; 2024 Suleman Agasimani. All rights reserved.
     </footer>
 
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle" onclick="toggleTheme()">
+        🌞
+    </div>
+
+    <!-- Scroll-triggered animation -->
     <script src="script.js"></script>
 </body>
 </html>
