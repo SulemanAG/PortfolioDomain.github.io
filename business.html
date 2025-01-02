@@ -6,19 +6,143 @@
     <title>Suleman Agasimani | Dark Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif; /* Using a clean sans-serif font */
+            background-color: #121212; /* Dark background for dark mode */
+            color: #e0e0e0; /* Light text color for contrast */
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.5s, color 0.5s; /* Smooth background color transition */
+        }
+
+        header {
+            background-color: #1a73e8; /* Header color */
+            color: black; /* Header text color */
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none; /* Remove default bullet points */
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline; /* Inline navigation items */
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: black; /* Navigation link color */
+            text-decoration: none; /* Remove underline from links */
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #ddd; /* Background for hovered and active links */
+            border-radius: 5px; /* Rounded corners for hover effect */
+        }
+
+        main {
+            margin: 20px; /* Margin for main content */
+        }
+
+        section {
+            background-color: #2a2a2a; /* Section background color */
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        h2 {
+            color: #f0c674; /* Color for section headings */
+            font-size: 24px; /* Font size for section headings */
+        }
+
+        p {
+            font-size: 16px; /* Font size for paragraphs */
+            color: #e0e0e0; /* Light text color */
+            line-height: 1.6; /* Improved readability */
+        }
+
+        ul {
+            margin-top: 10px; /* Margin for lists */
+            padding-left: 20px; /* Padding for list items */
+        }
+
+        footer {
+            text-align: center; /* Center-align footer text */
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #1a1a1a; /* Footer background color */
+            color: #e0e0e0; /* Footer text color */
+        }
+
+        footer p {
+            margin: 0; /* Remove default margin */
+        }
+
+        .container {
+            max-width: 800px; /* Limit the max width for readability */
+            margin: auto; /* Center the container */
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s forwards; /* Fade-in animation */
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1; /* Final opacity */
+            }
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: fixed; /* Position at the bottom right */
+            bottom: 20px; /* Distance from the bottom */
+            right: 20px; /* Distance from the right */
+            background: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center; /* Center the icon */
+            align-items: center; /* Center the icon */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background 0.3s; /* Smooth background transition */
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2); /* Slightly brighter on hover */
+        }
+    </style>
 </head>
 <body class="dark-mode">
 
 <header>
+    <h1>Business Cases - Smart City Urban Planning Project</h1>
     <nav>
         <ul>
-            <li><a href="index.html" >Home</a></li>
-            <li><a href="projects.html" class="active"">Projects</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
             <li><a href="learning.html">Learning Outcomes</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-    <h1>Business Cases - Smart City Urban Planning Project</h1>
 </header>
 
 <main>
@@ -133,7 +257,7 @@
     <section id="know-more" class="container fade-in">
         <h2>Know More</h2>
         <p>For a detailed explanation about the city:</p>
-        <a href="city.html">Know more</a>
+        <a href="city.html" style="color: #1a73e8;">Know more</a>
     </section>
 </main>
 
@@ -142,6 +266,10 @@
         <p>&copy; 2025 SULEMAN AGASIMANI. All rights reserved.</p>
     </div>
 </footer>
+
+<div class="theme-toggle" onclick="toggleTheme()">
+    <i class="fas fa-moon"></i>
+</div>
 
 </body>
 </html>
