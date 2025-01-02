@@ -20,19 +20,20 @@
             text-align: center;
         }
         section {
-            background-color: white;
+            background-color: #333; /* Initial black background */
+            color: white; /* Initial text color white */
             margin: 20px;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         h2 {
-            color: #333;
+            color: #fff;
             font-size: 24px;
         }
         p {
             font-size: 16px;
-            color: #555;
+            color: #ccc; /* Light grey for better readability */
             line-height: 1.6;
         }
         .button {
@@ -48,20 +49,34 @@
         .button:hover {
             background-color: #4285f4;
         }
-        section {
-            margin-bottom: 30px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            background-color: #f9f9f9;
+        .toggle-btn {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #1a73e8;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            cursor: pointer;
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .toggle-btn:hover {
+            background-color: #4285f4;
         }
-        ul li {
-            font-size: 18px;
-            margin-bottom: 10px;
+        /* Dark mode styling */
+        .dark-mode {
+            background-color: #333; /* Dark background */
+            color: white; /* White text */
+        }
+
+        .moon-icon {
+            font-size: 24px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .light-mode {
+            background-color: #f9f9f9; /* Light background */
+            color: #333; /* Dark text */
         }
     </style>
 </head>
@@ -71,7 +86,7 @@
     <h1>Smart City Urban Planning Project</h1>
 </header>
 
-<section id="problem-statement">
+<section id="problem-statement" class="dark-mode">
     <h2>Problem Statement</h2>
     <p>
         Data-driven urban planning system for smart cities with minimal vehicle usage. It will use efficient data structures
@@ -79,9 +94,10 @@
         sustainability and enhancing tourism opportunities. The system will focus on leveraging real-time data and predictive
         analytics to ensure efficient, eco-friendly city operations.
     </p>
+    <button class="toggle-btn" onclick="toggleVisibilityAndColor('problem-statement')">Toggle Visibility</button>
 </section>
 
-<section id="use-cases">
+<section id="use-cases" class="dark-mode">
     <h2>Use Cases</h2>
     <ul>
         <li><strong>Smart City Traffic Optimization:</strong> Efficiently manage traffic flow and reduce congestion by analyzing real-time data from various sensors, cameras, and traffic lights. Use machine learning algorithms and real-time data analytics to optimize signal timings, reroute traffic, and reduce overall vehicle usage in congested areas, thus promoting public transportation and shared mobility.</li>
@@ -94,9 +110,10 @@
         <li><strong>Energy Efficiency and Sustainability:</strong> Reduce energy consumption through smart management of city infrastructure.</li>
         <li><strong>Health and Safety Management:</strong> Ensure public health and safety by reducing environmental impact of transportation and improving emergency response times.</li>
     </ul>
+    <button class="toggle-btn" onclick="toggleVisibilityAndColor('use-cases')">Toggle Visibility</button>
 </section>
 
-<section id="business-ideas">
+<section id="business-ideas" class="dark-mode">
     <h2>Business Ideas</h2>
     <ul>
         <li><strong>Predicting Optimal Tourist Routes:</strong> Managed by Varun</li>
@@ -106,6 +123,7 @@
         <li><strong>Monitoring Water Usage in Residential Areas:</strong> Managed by Varun & Vishal</li>
         <li><strong>Optimizing City-Wide Internet Connectivity:</strong> Managed by Saif & Suleman</li>
     </ul>
+    <button class="toggle-btn" onclick="toggleVisibilityAndColor('business-ideas')">Toggle Visibility</button>
     <a href="business.html" class="button">Know More</a>
 </section>
 
@@ -117,6 +135,28 @@
     </ul>
     <a href="myproject.html" class="button" target="_blank">Know More</a>
 </section>
+
+<!-- Moon Icon -->
+<div class="moon-icon" onclick="toggleDarkMode()">🌙</div>
+
+<script>
+    // Function to toggle the visibility and color of the section
+    function toggleVisibilityAndColor(sectionId) {
+        const section = document.getElementById(sectionId);
+        section.classList.toggle('dark-mode');
+        section.classList.toggle('light-mode');
+        const isVisible = section.style.display !== 'none';
+        section.style.display = isVisible ? 'none' : 'block';
+    }
+
+    // Function to toggle dark mode on the entire page
+    function toggleDarkMode() {
+        const body = document.body;
+        const moonIcon = document.querySelector('.moon-icon');
+        body.classList.toggle('dark-mode');
+        moonIcon.innerText = body.classList.contains('dark-mode') ? '🌙' : '🌞'; // Change moon to sun or vice versa
+    }
+</script>
 
 </body>
 </html>
