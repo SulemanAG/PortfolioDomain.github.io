@@ -1,13 +1,15 @@
-// Function to toggle theme between dark and light
 function toggleTheme() {
     const body = document.body;
-    const themeToggle = document.querySelector('.theme-toggle');
+    const themeButton = document.querySelector('.theme-toggle');
 
+    // Toggle the body class between light and dark mode
+    body.classList.toggle('dark-mode');
+    body.classList.toggle('light-mode');
+
+    // Change the button icon based on the theme
     if (body.classList.contains('dark-mode')) {
-        body.classList.replace('dark-mode', 'light-mode');
-        themeToggle.textContent = '☀️'; // Sun symbol for light mode
+        themeButton.textContent = '🌙'; // Moon icon for dark mode
     } else {
-        body.classList.replace('light-mode', 'dark-mode');
-        themeToggle.textContent = '🌙'; // Moon symbol for dark mode
+        themeButton.textContent = '☀️'; // Sun icon for light mode
     }
 }
