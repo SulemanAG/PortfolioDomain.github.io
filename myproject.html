@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Projects managed by me</title>
+    <title>Projects Managed by Me</title>
     <script src="script.js" defer></script>
     <style>
         body {
@@ -12,6 +12,7 @@
             background-color: #808080;  /* Grey background */
             margin: 0;
             padding: 0;
+            transition: background-color 0.5s, color 0.5s; /* Smooth transition */
         }
         header {
             background-color: #1a73e8;
@@ -25,6 +26,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.5s, color 0.5s;
         }
         h2 {
             color: #333;
@@ -34,6 +36,7 @@
             font-size: 16px;
             color: #555;
             line-height: 1.6;
+            margin-bottom: 20px;  /* Added spacing between paragraphs */
         }
         .theme-toggle {
             position: fixed;
@@ -50,6 +53,7 @@
         }
         section.light-mode {
             background-color: #fff;
+            color: #333;
         }
 
         /* Dark Mode Styles */
@@ -118,6 +122,8 @@
         <li><strong>Data Collection and Accuracy:</strong> Accurate and up-to-date information on waste generation patterns, vehicle positions, and road conditions is essential. Any inaccuracies in this data can lead to suboptimal routing and higher operational costs.</li>
     </ul>
 </section>
+
+<script src="script.js"></script>
 
 </body>
 </html>
