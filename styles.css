@@ -132,9 +132,11 @@ button:hover, .button:hover {
     color: #333;
 }
 
-/* Remove Animations */
+/* Removed Zoom-in Effect and Animations */
 section {
-    /* Removed fadeIn animation */
+    /* Removed all animations */
 }
 
-/* Removed zoom-in effect on body */
+body {
+    /* Removed the body hover effect causing zoom-in */
+}
