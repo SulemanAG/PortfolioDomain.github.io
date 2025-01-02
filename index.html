@@ -23,13 +23,13 @@
     <section id="personal-details">
         <h2>Personal Details</h2>
         <ul>
-            <li>Name: Suleman Agasimani</li>
-            <li>SRN: 01FE23BCI071</li>
-            <li>Course Name: Design And Analysis Of Algorithms</li>
-            <li>Course Code: 24ECAC203</li>
-            <li>Course Instructor: K.M.M.Rajashekharaiah</li>
-            <li>University: KLE Technological University</li>
-            <li>Portfolio Topic/Domain: DAA Course Project</li>
+            <li><strong>Name:</strong> Suleman Agasimani</li>
+            <li><strong>SRN:</strong> 01FE23BCI071</li>
+            <li><strong>Course Name:</strong> Design And Analysis Of Algorithms</li>
+            <li><strong>Course Code:</strong> 24ECAC203</li>
+            <li><strong>Course Instructor:</strong> K.M.M.Rajashekharaiah</li>
+            <li><strong>University:</strong> KLE Technological University</li>
+            <li><strong>Portfolio Topic/Domain:</strong> DAA Course Project</li>
         </ul>
     </section>
 
@@ -37,11 +37,8 @@
     <section id="find-me-online">
         <h2>Find Me Online</h2>
         <ul>
-            <li><a href="https://www.linkedin.com/in/your-profile-link" target="_blank">LinkedIn</a></li>
-            <li><a href="https://github.com/your-profile-link" target="_blank">GitHub</a></li>
-            <li><a href="https://twitter.com/your-profile-link" target="_blank">Twitter</a></li>
-            <li><a href="https://www.facebook.com/your-profile-link" target="_blank">Facebook</a></li>
-            <li><a href="https://www.instagram.com/your-profile-link" target="_blank">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/in/your-profile-link" target="_blank" class="social-btn linkedin">LinkedIn</a></li>
+            <li><a href="https://github.com/your-profile-link" target="_blank" class="social-btn github">GitHub</a></li>
         </ul>
     </section>
 
@@ -67,6 +64,20 @@
         <span id="theme-icon">🌙</span>
     </label>
 
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+
+        themeToggle.addEventListener('change', () => {
+            if (themeToggle.checked) {
+                document.body.classList.add('dark-mode');
+                themeIcon.textContent = '🌞';  // Change to sun icon
+            } else {
+                document.body.classList.remove('dark-mode');
+                themeIcon.textContent = '🌙';  // Change to moon icon
+            }
+        });
+    </script>
 </body>
 
 </html>
