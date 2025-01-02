@@ -3,309 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suleman Agasimani - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* General Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #1a73e8, #4285f4);
-            color: #fff;
-            transition: background 0.3s ease, color 0.3s ease;
-            overflow-x: hidden;
-            border: 2px solid #fff; /* Added border to site endings */
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Header */
-        header {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.7);
-            border-bottom: 2px solid #fff;
-            animation: slideDown 1s ease-out;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            font-family: 'Raleway', sans-serif;
-            margin-bottom: 0.5rem;
-        }
-
-        header p {
-            font-size: 1.2rem;
-        }
-
-        nav {
-            margin-top: 1rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 1.1rem;
-            margin: 0 15px;
-            padding: 10px 20px;
-            border: 2px solid #fff;
-            border-radius: 50px;
-            transition: background 0.3s ease, color 0.3s ease;
-        }
-
-        nav a:hover {
-            background: #fff;
-            color: #1a73e8;
-        }
-
-        /* Sections */
-        section {
-            margin: 1.5rem auto; /* Reduced size */
-            padding: 1.5rem; /* Reduced padding */
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            animation: fadeIn 1.2s ease;
-            max-width: 900px; /* Reduced section size */
-        }
-
-        section h2 {
-            font-size: 2rem;
-            font-family: 'Raleway', sans-serif;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-
-        section p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        /* Buttons */
-        .button {
-            display: inline-block;
-            margin: 15px 5px;
-            padding: 12px 25px;
-            font-size: 1rem;
-            color: #fff;
-            background: #ff5722;
-            text-decoration: none;
-            border-radius: 30px;
-            transition: transform 0.3s ease, background 0.3s ease;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .button:hover {
-            background: #ff7043;
-            transform: scale(1.1);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Skills */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .skill {
-            background: #fff;
-            color: #1a73e8;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 1rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Footer */
-        footer {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 1rem;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* Theme Toggle */
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #ffeb3b;
-            color: #000;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            transition: transform 0.4s ease;
-        }
-
-        .theme-toggle:hover {
-            transform: rotate(360deg);
-        }
-
-        .theme-toggle.moon {
-            background: #3c3c3c;
-            color: #fff;
-        }
-
-        /* Image Section */
-        .image-section {
-            position: relative;
-            margin-top: 2rem;
-        }
-
-        .profile-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            animation: fadeImage 1s ease-out;
-        }
-
-        @keyframes fadeImage {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Scroll Effect for Image */
-        .scroll-fade {
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .scroll-fade.hidden {
-            opacity: 0;
-        }
-    </style>
+    <title>Your Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="light">
+<body>
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle">
+        🌞
+    </div>
+
+    <!-- Header -->
     <header>
-        <h1>Suleman Agasimani</h1>
-        <p>Your gateway to creativity and innovation</p>
-        <nav>
-            <a href="#about">About Me</a>
-            <a href="#find-me">Find Me Online</a>
-            <a href="#skills">Skills</a>
-        </nav>
+        <h1>Suleman Agasimani's Portfolio</h1>
+        <p>Explore my journey and projects in Design and Analysis of Algorithms.</p>
     </header>
 
-    <main>
-        <!-- About Me Section -->
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello, I'm Suleman Agasimani, a passionate technologist and problem-solver. Discover my journey and projects.</p>
-            <a href="projects.html" class="button">Explore My Projects</a>
-        </section>
+    <!-- Section to Add Course Details -->
+    <section id="course-details">
+        <h2>Course Details</h2>
+        <div class="details">
+            <p><strong>Name:</strong> Suleman Agasimani</p>
+            <p><strong>SRN:</strong> 01FE23BCI071</p>
+            <p><strong>Course Name:</strong> Design And Analysis Of Algorithms</p>
+            <p><strong>Course Code:</strong> 24ECAC203</p>
+            <p><strong>Course Instructor:</strong> K.M.M.Rajashekharaiah</p>
+            <p><strong>University:</strong> KLE Technological University</p>
+            <p><strong>Portfolio Topic/Domain:</strong> DAA Course Project</p>
+        </div>
+    </section>
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>My Skills</h2>
-            <div class="skills">
-                <span class="skill">C++</span>
-                <span class="skill">Python</span>
-                <span class="skill">JavaScript</span>
-                <span class="skill">React.js</span>
-                <span class="skill">Node.js</span>
-                <span class="skill">Algorithms</span>
-            </div>
-        </section>
-
-        <!-- Find Me Online Section -->
-        <section id="find-me">
-            <h2>Find Me Online</h2>
-            <div class="links">
-                <a href="https://github.com/suleman-agasimani" target="_blank" class="button">GitHub</a>
-                <a href="https://linkedin.com/in/suleman-agasimani" target="_blank" class="button">LinkedIn</a>
-                <a href="mailto:suleman.agasimani@example.com" class="button">Email Me</a>
-            </div>
-        </section>
-
-        <!-- Image Section -->
-        <section id="image" class="image-section">
-            <img src="your-image.jpg" alt="Suleman Agasimani" class="profile-image scroll-fade">
-        </section>
-
-        <!-- Quote Section -->
-        <section id="quote">
-            <blockquote>
-                “The only way to do great work is to love what you do.” – Steve Jobs
-            </blockquote>
-        </section>
-    </main>
+    <!-- Add any random image section here in future -->
+    <section class="random-images">
+        <!-- Future random images will go here -->
+    </section>
 
     <!-- Footer -->
     <footer>
-        &copy; 2024 Suleman Agasimani. All rights reserved.
+        <p>&copy; 2025 Suleman Agasimani | All rights reserved.</p>
     </footer>
 
-    <!-- Theme Toggle Button -->
-    <div class="theme-toggle" onclick="toggleTheme()">
-        ☼
-    </div>
-
-    <script>
-        // Theme toggle functionality
-        function toggleTheme() {
-            document.body.classList.toggle('dark');
-            document.body.classList.toggle('light');
-            const themeToggle = document.querySelector('.theme-toggle');
-            themeToggle.classList.toggle('moon');
-            themeToggle.textContent = document.body.classList.contains('dark') ? '🌙' : '☼';
-        }
-
-        // Image scroll effect
-        const image = document.querySelector('.profile-image');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 200) {
-                image.classList.add('hidden');
-            } else {
-                image.classList.remove('hidden');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
