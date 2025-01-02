@@ -1,4 +1,4 @@
-/* General Reset and Base Styles */
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,26 +6,17 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background: #121212; /* Dark theme background */
+    font-family: 'Roboto', sans-serif;
+    background: #333;
     color: #fff;
-    transition: background 0.3s ease, color 0.3s ease;
     overflow-x: hidden;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Header */
 header {
     text-align: center;
     padding: 2rem;
     background: rgba(0, 0, 0, 0.7);
     border-bottom: 2px solid #fff;
-    animation: slideDown 1s ease-out;
 }
 
 header h1 {
@@ -47,7 +38,7 @@ nav a {
     color: #fff;
     font-size: 1.1rem;
     margin: 0 15px;
-    padding: 8px 15px;
+    padding: 10px 20px;
     border: 2px solid #fff;
     border-radius: 50px;
     transition: background 0.3s ease, color 0.3s ease;
@@ -58,20 +49,19 @@ nav a:hover {
     color: #1a73e8;
 }
 
-/* Sections */
 section {
-    margin: 1rem auto;
+    margin: 2rem auto;
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     text-align: left;
-    animation: fadeIn 1.2s ease;
-    max-width: 800px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 section h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-family: 'Raleway', sans-serif;
     margin-bottom: 1rem;
     text-transform: uppercase;
@@ -79,43 +69,67 @@ section h2 {
 
 section p {
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
-/* Buttons */
-.button {
+#projects, #find-me {
+    font-size: 1rem;
+}
+
+button, .button {
     display: inline-block;
-    margin: 10px 5px;
-    padding: 10px 20px;
+    padding: 12px 25px;
     font-size: 1rem;
     color: #fff;
     background: #ff5722;
     text-decoration: none;
-    border-radius: 30px;
-    transition: transform 0.3s ease, background 0.3s ease;
+    border-radius: 50px;
+    transition: background 0.3s ease, transform 0.3s ease;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    margin: 10px;
 }
 
-.button:hover {
+button:hover, .button:hover {
     background: #ff7043;
     transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* Find Me Online */
-.links {
+#find-me .links {
     display: flex;
     justify-content: space-between;
-    gap: 15px;
-    margin-top: 1rem;
+    flex-wrap: wrap;
 }
 
-/* Footer */
-footer {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 1rem;
-    text-align: center;
-    font-size: 0.9rem;
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #ffeb3b;
+    color: #000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(360deg);
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.light-mode {
+    background-color: #fff;
+    color: #333;
 }
 
 /* Animations */
@@ -141,57 +155,11 @@ footer {
     }
 }
 
-/* Dark Mode */
-.dark-mode {
-    background-color: #121212;
-    color: #fff;
+section {
+    animation: fadeIn 1s ease-out;
 }
 
-/* Light Mode */
-.light-mode {
-    background-color: #fff;
-    color: #121212;
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #ffeb3b;
-    color: #000;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: transform 0.4s ease;
-}
-
-.theme-toggle:hover {
-    transform: rotate(360deg);
-}
-
-/* Fade on Scroll */
-.fade-on-scroll {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.fade-on-scroll.visible {
-    opacity: 1;
-}
-
-/* Hover Animation */
-.hover-animate {
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.hover-animate.animate {
-    transform: scale(1.1);
-    opacity: 0.8;
+/* Additional Animations */
+body:hover {
+    transform: scale(1.05);
 }
