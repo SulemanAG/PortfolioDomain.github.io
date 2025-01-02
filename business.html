@@ -20,6 +20,11 @@
             padding: 20px;
             text-align: center;
         }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
         section {
             background-color: white;
             margin: 20px;
@@ -58,14 +63,6 @@
         .button:hover {
             background-color: #4285f4;
         }
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
         /* Light Mode Styles */
         body.light-mode {
             background-color: #f4f4f4;
@@ -91,132 +88,134 @@
 <header>
     <h1>Business Cases - Smart City Urban Planning Project</h1>
 </header>
-<!-- Theme Toggle Button -->
-<div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+
+<!-- First Section -->
 <section>
-    <h2>Introduction to the Business Cases</h2>
-    <p>This document outlines various business cases related to the urban planning system for smart cities, focusing on sustainability, traffic management, waste optimization, and more. Each business case includes sustainable goals, challenges in implementation, and an overview of the technological approach.</p>
+    <div class="container">
+        <h2>Introduction to the Business Cases</h2>
+        <p>This document outlines various business cases related to the urban planning system for smart cities, focusing on sustainability, traffic management, waste optimization, and more. Each business case includes sustainable goals, challenges in implementation, and an overview of the technological approach.</p>
+    </div>
 </section>
 
+<!-- Second Section -->
 <section>
-    <h3>1. Predicting Optimal Tourist Routes (Varun T)</h3>
-    <p>This initiative focuses on developing a system that leverages real-time data like traffic conditions, crowd density, and user preferences to recommend ideal travel routes for tourists. Using graph-based algorithms, the system ensures that visitors have a seamless and enjoyable experience while reducing the pressure on popular tourist locations. By optimizing routes, it also supports sustainable urban tourism and enhances the visibility of lesser-known attractions.</p>
-    <p><strong>Sustainable goals:</strong></p>
-    <ul>
-        <li>Distributes tourism traffic evenly to prevent overcrowding and environmental degradation at popular sites.</li>
-        <li>Encourages the use of sustainable transport modes, reducing the carbon footprint of travel.</li>
-        <li>Enhances accessibility to cultural and natural heritage sites, fostering inclusive tourism.</li>
-    </ul>
-    <p><strong>Challenges in implementation:</strong></p>
-    <ul>
-        <li>Integrating diverse data sources like GPS, weather, and user preferences into a unified system.</li>
-        <li>Balancing system performance and accuracy for real-time route optimization.</li>
-        <li>Ensuring privacy and security while collecting and processing user data.</li>
-    </ul>
+    <div class="container">
+        <h3>1. Predicting Optimal Tourist Routes (Varun T)</h3>
+        <p>This initiative focuses on developing a system that leverages real-time data like traffic conditions, crowd density, and user preferences to recommend ideal travel routes for tourists. Using graph-based algorithms, the system ensures that visitors have a seamless and enjoyable experience while reducing the pressure on popular tourist locations. By optimizing routes, it also supports sustainable urban tourism and enhances the visibility of lesser-known attractions.</p>
+        <p><strong>Sustainable goals:</strong></p>
+        <ul>
+            <li>Distributes tourism traffic evenly to prevent overcrowding and environmental degradation at popular sites.</li>
+            <li>Encourages the use of sustainable transport modes, reducing the carbon footprint of travel.</li>
+            <li>Enhances accessibility to cultural and natural heritage sites, fostering inclusive tourism.</li>
+        </ul>
+        <p><strong>Challenges in implementation:</strong></p>
+        <ul>
+            <li>Integrating diverse data sources like GPS, weather, and user preferences into a unified system.</li>
+            <li>Balancing system performance and accuracy for real-time route optimization.</li>
+            <li>Ensuring privacy and security while collecting and processing user data.</li>
+        </ul>
+    </div>
 </section>
 
+<!-- Third Section -->
 <section>
-    <h3>2. Sorting Menu Items (Vishal H)</h3>
-    <p>Sorting menu items efficiently is crucial for e-commerce and digital platforms in food and retail industries. This system uses quick sort and array structures to organize items based on price or popularity, offering a streamlined and intuitive interface for users. By dynamically updating sorting criteria based on real-time data, the solution ensures an enhanced customer experience and supports better decision-making.</p>
-    <p><strong>Sustainable goals:</strong></p>
-    <ul>
-        <li>Promotes informed consumer choices by highlighting affordable or eco-friendly options.</li>
-        <li>Reduces decision-making time, indirectly contributing to efficient resource utilization in retail and food services.</li>
-        <li>Supports sustainable consumption patterns by surfacing locally sourced or seasonal items.</li>
-    </ul>
-    <p><strong>Challenges in implementation:</strong></p>
-    <ul>
-        <li>Adapting to changes in popularity or pricing in real-time without significant delays.</li>
-        <li>Scaling efficiently for platforms with extensive and diverse catalogs.</li>
-        <li>Addressing algorithm biases to ensure fair representation of all menu items.</li>
-    </ul>
+    <div class="container">
+        <h3>2. Sorting Menu Items (Vishal H)</h3>
+        <p>Sorting menu items efficiently is crucial for e-commerce and digital platforms in food and retail industries. This system uses quick sort and array structures to organize items based on price or popularity, offering a streamlined and intuitive interface for users. By dynamically updating sorting criteria based on real-time data, the solution ensures an enhanced customer experience and supports better decision-making.</p>
+        <p><strong>Sustainable goals:</strong></p>
+        <ul>
+            <li>Promotes informed consumer choices by highlighting affordable or eco-friendly options.</li>
+            <li>Reduces decision-making time, indirectly contributing to efficient resource utilization in retail and food services.</li>
+            <li>Supports sustainable consumption patterns by surfacing locally sourced or seasonal items.</li>
+        </ul>
+        <p><strong>Challenges in implementation:</strong></p>
+        <ul>
+            <li>Adapting to changes in popularity or pricing in real-time without significant delays.</li>
+            <li>Scaling efficiently for platforms with extensive and diverse catalogs.</li>
+            <li>Addressing algorithm biases to ensure fair representation of all menu items.</li>
+        </ul>
+    </div>
 </section>
 
+<!-- Fourth Section -->
 <section>
-    <h3>3. Monitoring Traffic Flow (Saif Ali)</h3>
-    <p>Managing traffic density at critical intersections is essential for promoting vehicle-free smart cities. This case employs graph traversal algorithms like BFS and DFS to analyze traffic patterns, identify bottlenecks, and propose alternate routes. The solution supports proactive traffic management, ensuring smoother flow and reducing environmental impact.</p>
-    <p><strong>Sustainable goals:</strong></p>
-    <ul>
-        <li>Minimizes emissions by reducing idle times at congested intersections.</li>
-        <li>Supports active commuting methods like walking and cycling by optimizing pathways.</li>
-        <li>Enhances urban mobility while aligning with goals for sustainable cities and communities.</li>
-    </ul>
-    <p><strong>Challenges in implementation:</strong></p>
-    <ul>
-        <li>High dependency on IoT infrastructure for accurate data collection.</li>
-        <li>Real-time analysis of large datasets from sensors and cameras.</li>
-        <li>Overcoming resistance from commuters used to traditional traffic systems.</li>
-    </ul>
+    <div class="container">
+        <h3>3. Monitoring Traffic Flow (Saif Ali)</h3>
+        <p>Managing traffic density at critical intersections is essential for promoting vehicle-free smart cities. This case employs graph traversal algorithms like BFS and DFS to analyze traffic patterns, identify bottlenecks, and propose alternate routes. The solution supports proactive traffic management, ensuring smoother flow and reducing environmental impact.</p>
+        <p><strong>Sustainable goals:</strong></p>
+        <ul>
+            <li>Minimizes emissions by reducing idle times at congested intersections.</li>
+            <li>Supports active commuting methods like walking and cycling by optimizing pathways.</li>
+            <li>Enhances urban mobility while aligning with goals for sustainable cities and communities.</li>
+        </ul>
+        <p><strong>Challenges in implementation:</strong></p>
+        <ul>
+            <li>High dependency on IoT infrastructure for accurate data collection.</li>
+            <li>Real-time analysis of large datasets from sensors and cameras.</li>
+            <li>Overcoming resistance from commuters used to traditional traffic systems.</li>
+        </ul>
+    </div>
 </section>
 
+<!-- Fifth Section -->
 <section>
-    <h3>4. Optimizing Waste Management Routes (Suleman A)</h3>
-    <p>Efficient waste collection is vital for urban hygiene and sustainability. This system applies Dijkstra's Algorithm to determine optimal routes for waste collection vehicles, minimizing fuel consumption and travel time. It not only reduces operational costs but also contributes to lower emissions, supporting green city initiatives.</p>
-    <p><strong>Sustainable goals:</strong></p>
-    <ul>
-        <li>Lowers fuel consumption and carbon emissions by streamlining waste collection routes.</li>
-        <li>Reduces operational costs, enabling reinvestment in other sustainability initiatives.</li>
-        <li>Prevents missed waste pickups, promoting cleaner neighborhoods and efficient waste management.</li>
-    </ul>
-    <p><strong>Challenges in implementation:</strong></p>
-    <ul>
-        <li>Handling dynamic changes like roadblocks or unexpected waste accumulation.</li>
-        <li>Collecting and updating accurate data on waste generation across neighborhoods.</li>
-        <li>Ensuring system compatibility with existing waste management infrastructure.</li>
-    </ul>
+    <div class="container">
+        <h3>4. Optimizing Waste Management Routes (Suleman A)</h3>
+        <p>Efficient waste collection is vital for urban hygiene and sustainability. This system applies Dijkstra's Algorithm to determine optimal routes for waste collection vehicles, minimizing fuel consumption and travel time. It not only reduces operational costs but also contributes to lower emissions, supporting green city initiatives.</p>
+        <p><strong>Sustainable goals:</strong></p>
+        <ul>
+            <li>Lowers fuel consumption and carbon emissions by streamlining waste collection routes.</li>
+            <li>Reduces operational costs, enabling reinvestment in other sustainability initiatives.</li>
+            <li>Prevents missed waste pickups, promoting cleaner neighborhoods and efficient waste management.</li>
+        </ul>
+        <p><strong>Challenges in implementation:</strong></p>
+        <ul>
+            <li>Handling dynamic changes like roadblocks or unexpected waste accumulation.</li>
+            <li>Collecting and updating accurate data on waste generation across neighborhoods.</li>
+            <li>Ensuring system compatibility with existing waste management infrastructure.</li>
+        </ul>
+    </div>
 </section>
 
+<!-- Sixth Section -->
 <section>
-    <h3>5. Monitoring Water Usage in Residential Areas (Varun & Vishal)</h3>
-    <p>Water conservation is a critical concern in urban planning. This system tracks and analyzes residential water usage patterns using time-series analysis. By identifying trends and irregularities, it provides actionable insights for policymakers and promotes responsible water consumption among residents.</p>
-    <p><strong>Sustainable goals:</strong></p>
-    <ul>
-        <li>Identifies wasteful water usage patterns, supporting conservation efforts.</li>
-        <li>Promotes equitable water distribution across neighborhoods.</li>
-        <li>Aligns with SDG Goal 6: Clean Water and Sanitation by fostering efficient water use.</li>
-    </ul>
-    <p><strong>Challenges in implementation:</strong></p>
-    <ul>
-        <li>Collecting accurate and granular data without invading privacy.</li>
-        <li>Analyzing seasonal or situational fluctuations in water usage.</li>
-        <li>Encouraging residents to adopt water-saving practices based on insights.</li>
-    </ul>
+    <div class="container">
+        <h3>5. Monitoring Water Usage in Residential Areas (Varun & Vishal)</h3>
+        <p>Water conservation is a critical concern in urban planning. This system tracks and analyzes residential water usage patterns using time-series analysis. By identifying trends and irregularities, it provides actionable insights for policymakers and promotes responsible water consumption among residents.</p>
+        <p><strong>Sustainable goals:</strong></p>
+        <ul>
+            <li>Identifies wasteful water usage patterns, supporting conservation efforts.</li>
+            <li>Promotes equitable water distribution across neighborhoods.</li>
+            <li>Aligns with SDG Goal 6: Clean Water and Sanitation by fostering efficient water use.</li>
+        </ul>
+        <p><strong>Challenges in implementation:</strong></p>
+        <ul>
+            <li>Collecting accurate and granular data without invading privacy.</li>
+            <li>Analyzing seasonal or situational fluctuations in water usage.</li>
+            <li>Encouraging residents to adopt water-saving practices based on insights.</li>
+        </ul>
+    </div>
 </section>
 
+<!-- Seventh Section -->
 <section>
-    <h3>6. Optimizing City-Wide Internet Connectivity (Saif & Suleman)</h3>
-    <p>Reliable internet connectivity is foundational to smart cities. This initiative maps and optimizes the placement of Wi-Fi hotspots using minimum spanning tree algorithms. By ensuring high-speed connectivity and minimizing redundant infrastructure, the system enhances digital inclusivity and supports the city's technological growth.</p>
-    <p><strong>Sustainable goals:</strong></p>
-    <ul>
-        <li>Ensures equitable access to internet resources, bridging the digital divide.</li>
-        <li>Reduces infrastructure redundancy, supporting efficient resource utilization.</li>
-        <li>Promotes digital inclusion, enabling access to e-services for all city residents.</li>
-    </ul>
-    <p><strong>Challenges in implementation:</strong></p>
-    <ul>
-        <li>Balancing high-speed connectivity with cost-effective deployment of Wi-Fi hotspots.</li>
-        <li>Addressing challenges in mapping dense urban areas with complex layouts.</li>
-        <li>Ensuring network reliability during peak usage hours or adverse conditions.</li>
-    </ul>
+    <div class="container">
+        <h3>6. Optimizing City-Wide Internet Connectivity (Saif & Suleman)</h3>
+        <p>Reliable internet connectivity is foundational to smart cities. This initiative maps and optimizes the placement of Wi-Fi hotspots using minimum spanning tree algorithms. By ensuring high-speed connectivity and minimizing redundant infrastructure, the system enhances digital inclusivity and supports the city's technological growth.</p>
+        <p><strong>Sustainable goals:</strong></p>
+        <ul>
+            <li>Ensures equitable access to internet resources, bridging the digital divide.</li>
+            <li>Reduces infrastructure redundancy, supporting efficient resource utilization.</li>
+            <li>Promotes digital inclusion, enabling access to e-services for all city residents.</li>
+        </ul>
+        <p><strong>Challenges in implementation:</strong></p>
+        <ul>
+            <li>Balancing high-speed connectivity with cost-effective deployment of Wi-Fi hotspots.</li>
+            <li>Addressing challenges in mapping dense urban areas with complex layouts.</li>
+            <li>Ensuring network reliability during peak usage hours or adverse conditions.</li>
+        </ul>
+    </div>
 </section>
-
-
-
-<script>
-// Function to toggle theme between dark and light
-function toggleTheme() {
-    const body = document.body;
-    const themeToggle = document.querySelector('.theme-toggle');
-
-    if (body.classList.contains('dark-mode')) {
-        body.classList.replace('dark-mode', 'light-mode');
-        themeToggle.textContent = '🌙'; // Moon symbol for dark mode
-    } else {
-        body.classList.replace('light-mode', 'dark-mode');
-        themeToggle.textContent = '☀️'; // Sun symbol for light mode
-    }
-}
-</script>
 
 </body>
 </html>
