@@ -1,4 +1,4 @@
-/* Global Styles */
+/* General Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,56 +7,35 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-body.dark {
-    background-color: #121212;
+    background: linear-gradient(135deg, #1a73e8, #4285f4);
     color: #fff;
+    transition: background 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Raleway', sans-serif;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #008CBA;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #005f73;
-}
-
-/* Header Styles */
+/* Header */
 header {
-    background: linear-gradient(135deg, #008CBA, #005f73);
-    color: #fff;
-    padding: 2rem;
     text-align: center;
+    padding: 3rem;
+    background: rgba(0, 0, 0, 0.7);
+    border-bottom: 2px solid #fff;
+    animation: slideDown 1s ease-out;
 }
 
 header h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 0.5rem;
 }
 
 header p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: 1.2rem;
 }
 
 nav {
@@ -64,54 +43,65 @@ nav {
 }
 
 nav a {
-    margin: 0 15px;
-    font-size: 1.2rem;
+    text-decoration: none;
     color: #fff;
-    transition: color 0.3s;
+    font-size: 1.1rem;
+    margin: 0 15px;
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover {
-    color: #ff6f61;
+    background: #fff;
+    color: #1a73e8;
 }
 
-/* Hero Section */
-.hero-section {
-    background-color: #f4f4f4;
-    padding: 4rem 0;
+/* Sections */
+section {
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
+    animation: fadeIn 1.2s ease;
 }
 
-.hero-section__title {
-    font-size: 2.5rem;
+section h2 {
+    font-size: 2rem;
+    font-family: 'Raleway', sans-serif;
     margin-bottom: 1rem;
+    text-transform: uppercase;
 }
 
-.hero-section__desc {
-    font-size: 1.2rem;
-    color: #555;
-    max-width: 700px;
-    margin: 0 auto;
+section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 
-/* About Section */
-#about {
-    padding: 4rem 2rem;
-    text-align: center;
-    background-color: #fff;
+/* Buttons */
+.button {
+    display: inline-block;
+    margin: 15px 5px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    color: #fff;
+    background: #ff5722;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-#about blockquote {
-    font-style: italic;
-    margin-top: 1.5rem;
-    color: #555;
+.button:hover {
+    background: #ff7043;
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* Skills Section */
-#skills {
-    padding: 4rem 2rem;
-    background-color: #f4f4f4;
-}
-
+/* Skills */
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -120,141 +110,66 @@ nav a:hover {
 }
 
 .skill {
-    background-color: #008CBA;
-    color: white;
-    padding: 15px 25px;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    transition: transform 0.3s;
-}
-
-.skill:hover {
-    transform: translateY(-5px);
-}
-
-/* Projects Section */
-#projects {
-    padding: 4rem 2rem;
-    background-color: #fff;
-}
-
-.project {
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.project h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.project p {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 1rem;
-}
-
-.project .button {
-    background-color: #008CBA;
-    color: white;
+    background: #fff;
+    color: #1a73e8;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
     text-transform: uppercase;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-}
-
-.project .button:hover {
-    background-color: #005f73;
-}
-
-/* Contact Section */
-#contact {
-    padding: 4rem 2rem;
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-#contact .links a {
-    background-color: #008CBA;
-    color: white;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-}
-
-#contact .links a:hover {
-    background-color: #005f73;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer */
 footer {
-    background-color: #121212;
-    color: #fff;
-    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
     padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
 }
 
-footer a {
-    color: #fff;
-    text-decoration: none;
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-footer a:hover {
-    color: #ff6f61;
+@keyframes slideDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-/* Theme Toggle Button */
+/* Theme Toggle */
 .theme-toggle {
     position: fixed;
     top: 20px;
     right: 20px;
-    background-color: #008CBA;
-    color: white;
+    background: #ffeb3b;
+    color: #000;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    z-index: 1000;
+    transition: transform 0.4s ease;
 }
 
 .theme-toggle:hover {
-    background-color: #005f73;
-}
-
-/* Sparkles Effect */
-.sparkles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-}
-
-.sparkle {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background-color: #fff;
-    border-radius: 50%;
-    animation: sparkleAnimation 1.5s infinite ease-in-out;
-}
-
-@keyframes sparkleAnimation {
-    0% {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(0.8);
-    }
+    transform: rotate(360deg);
 }
