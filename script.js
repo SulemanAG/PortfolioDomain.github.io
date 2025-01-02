@@ -1,38 +1,37 @@
-// JavaScript to handle theme toggle and animations
-
-const themeToggle = document.getElementById('theme-toggle');
-const themeIcon = document.getElementById('theme-icon');
-
-// Change theme when the toggle is clicked
-themeToggle.addEventListener('change', () => {
-    if (themeToggle.checked) {
-        document.body.classList.add('dark-mode');
-        themeIcon.textContent = '🌞';  // Change to sun icon
+// Theme toggle functionality
+function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle('light-mode');
+    body.classList.toggle('dark-mode');
+    
+    // Toggle the sun and moon icons
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (body.classList.contains('light-mode')) {
+        themeToggle.innerHTML = "🌙";  // Show moon icon for light mode
     } else {
-        document.body.classList.remove('dark-mode');
-        themeIcon.textContent = '🌙';  // Change to moon icon
+        themeToggle.innerHTML = "☀️";  // Show sun icon for dark mode
     }
-});
+}
 
-// Add scroll-based animations for the personal details and find-me sections
-const personalDetailsSection = document.getElementById('personal-details');
-const findMeSection = document.getElementById('find-me');
+// Scroll-triggered animations for text
+const textSections = document.querySelectorAll('.fade-on-scroll');
 
-// Function to add an "animate" class when scrolled into view
-const animateOnScroll = () => {
-    const sections = [personalDetailsSection, findMeSection];
-    sections.forEach((section) => {
+window.addEventListener('scroll', () => {
+    textSections.forEach(section => {
         const sectionTop = section.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
-        
-        if (sectionTop < windowHeight - 100) {
-            section.classList.add('animate');
+        if (sectionTop < windowHeight - 150) {
+            section.classList.add('visible');
         }
     });
-};
+});
 
-// Trigger the animation on scroll
-window.addEventListener('scroll', animateOnScroll);
-
-// Trigger animation on page load
-document.addEventListener('DOMContentLoaded', animateOnScroll);
+// Cursor hover-triggered animations
+document.querySelectorAll('.hover-animate').forEach(element => {
+    element.addEventListener('mouseenter', () => {
+        element.classList.add('animate');
+    });
+    element.addEventListener('mouseleave', () => {
+        element.classList.remove('animate');
+    });
+});
