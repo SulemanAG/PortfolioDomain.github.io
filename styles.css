@@ -67,7 +67,7 @@ nav a:hover {
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     width: 80%;
-    text-align: left;
+    text-align: left; /* Align text to the left */
 }
 
 #personal-details h2 {
@@ -218,4 +218,10 @@ input[type="checkbox"]:checked ~ body.dark-mode {
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+.animate {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-in, transform 1s ease-in;
 }
