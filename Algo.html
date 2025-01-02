@@ -5,42 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Algorithms - Suleman Agasimani</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="script.js" defer></script>
 </head>
 <body class="dark-mode">
-    <!-- Header Section -->
     <header>
-        <h1>Algorithms</h1>
-        <p>Explore the efficiency and applications of various algorithms</p>
-        <nav>
-            <a href="#sorting-algorithms">Sorting Algorithms</a>
-            <a href="#greedy-algorithms">Greedy Algorithms</a>
-            <a href="index.html">Back to Portfolio</a>
-        </nav>
+        <div class="container">
+            <h1>Algorithms</h1>
+            <p class="tagline">Explore the efficiency and applications of various algorithms</p>
+            <nav>
+                <ul>
+                    <li><a href="#sorting-algorithms">Sorting Algorithms</a></li>
+                    <li><a href="#greedy-algorithms">Greedy Algorithms</a></li>
+                    <li><a href="index.html">Back to Portfolio</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Sorting Algorithms Section -->
-    <section id="sorting-algorithms">
-        <h2>Sorting Algorithms</h2>
-        <p>Sorting algorithms are fundamental in computer science and are used to arrange data in a particular order. Below are the key sorting algorithms, their efficiencies, and implementations:</p>
+    <main>
+        <section id="sorting-algorithms" class="fade-in">
+            <div class="container">
+                <h2>Sorting Algorithms</h2>
+                <p>Sorting algorithms are fundamental in computer science and are used to arrange data in a particular order. Below are the key sorting algorithms, their efficiencies, and implementations:</p>
 
-        <h3>Bubble Sort</h3>
-        <p><strong>Efficiency:</strong> O(n^2) in worst and average cases, O(n) in best case.<br>
-        <strong>Use:</strong> Educational purposes and small datasets.</p>
-        <pre><code>
+                <div class="algorithm">
+                    <h3>Bubble Sort</h3>
+                    <p><strong>Efficiency:</strong> O(n^2) in worst and average cases, O(n) in best case.<br>
+                    <strong>Use:</strong> Educational purposes and small datasets.</p>
+                    <pre><code>
 def bubble_sort(arr):
     n = len(arr)
     for i in range(n):
         for j in range(0, n-i-1):
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
-        return arr
-        </code></pre>
+    return arr
+                    </code></pre>
+                </div>
 
-        <h3>Merge Sort</h3>
-        <p><strong>Efficiency:</strong> O(n log n) in all cases.<br>
-        <strong>Use:</strong> Large datasets requiring stable sorting.</p>
-        <pre><code>
+                <div class="algorithm">
+                    <h3>Merge Sort</h3>
+                    <p><strong>Efficiency:</strong> O(n log n) in all cases.<br>
+                    <strong>Use:</strong> Large datasets requiring stable sorting.</p>
+                    <pre><code>
 def merge_sort(arr):
     if len(arr) > 1:
         mid = len(arr)//2
@@ -69,13 +77,15 @@ def merge_sort(arr):
             arr[k] = R[j]
             j += 1
             k += 1
-        return arr
-        </code></pre>
+    return arr
+                    </code></pre>
+                </div>
 
-        <h3>Quick Sort</h3>
-        <p><strong>Efficiency:</strong> O(n log n) on average, O(n^2) in the worst case.<br>
-        <strong>Use:</strong> Fast in practice for large datasets.</p>
-        <pre><code>
+                <div class="algorithm">
+                    <h3>Quick Sort</h3>
+                    <p><strong>Efficiency:</strong> O(n log n) on average, O(n^2) in the worst case.<br>
+                    <strong>Use:</strong> Fast in practice for large datasets.</p>
+                    <pre><code>
 def quick_sort(arr):
     if len(arr) <= 1:
         return arr
@@ -84,18 +94,21 @@ def quick_sort(arr):
         less = [x for x in arr[1:] if x <= pivot]
         greater = [x for x in arr[1:] if x > pivot]
         return quick_sort(less) + [pivot] + quick_sort(greater)
-        </code></pre>
-    </section>
+                    </code></pre>
+                </div>
+            </div>
+        </section>
 
-    <!-- Greedy Algorithms Section -->
-    <section id="greedy-algorithms">
-        <h2>Greedy Algorithms</h2>
-        <p>Greedy algorithms solve optimization problems by making the locally optimal choice at each stage. Below are common greedy algorithms and their implementations:</p>
+        <section id="greedy-algorithms" class="fade-in">
+            <div class="container">
+                <h2>Greedy Algorithms</h2>
+                <p>Greedy algorithms solve optimization problems by making the locally optimal choice at each stage. Below are common greedy algorithms and their implementations:</p>
 
-        <h3>Prim's Algorithm</h3>
-        <p><strong>Efficiency:</strong> O(E log V) using a priority queue.<br>
-        <strong>Use:</strong> Finding the Minimum Spanning Tree (MST) of a graph.</p>
-        <pre><code>
+                <div class="algorithm">
+                    <h3>Prim's Algorithm</h3>
+                    <p><strong>Efficiency:</strong> O(E log V) using a priority queue.<br>
+                    <strong>Use:</strong> Finding the Minimum Spanning Tree (MST) of a graph.</p>
+                    <pre><code>
 def prim_mst(graph):
     import heapq
     start_node = 0
@@ -112,12 +125,14 @@ def prim_mst(graph):
                 if next_node not in visited:
                     heapq.heappush(edges, (next_weight, next_node))
     return mst
-        </code></pre>
+                    </code></pre>
+                </div>
 
-        <h3>Kruskal's Algorithm</h3>
-        <p><strong>Efficiency:</strong> O(E log E) where E is the number of edges.<br>
-        <strong>Use:</strong> Finding the Minimum Spanning Tree (MST) of a graph.</p>
-        <pre><code>
+                <div class="algorithm">
+                    <h3>Kruskal's Algorithm</h3>
+                    <p><strong>Efficiency:</strong> O(E log E) where E is the number of edges.<br>
+                    <strong>Use:</strong> Finding the Minimum Spanning Tree (MST) of a graph.</p>
+                    <pre><code>
 def kruskal_mst(graph):
     parent = {}
     def find(n):
@@ -140,12 +155,14 @@ def kruskal_mst(graph):
             union(u, v)
             mst.append((u, v, weight))
     return mst
-        </code></pre>
+                    </code></pre>
+                </div>
 
-        <h3>Huffman Coding</h3>
-        <p><strong>Efficiency:</strong> O(n log n) due to priority queue operations.<br>
-        <strong>Use:</strong> Data compression and encoding.</p>
-        <pre><code>
+                <div class="algorithm">
+                    <h3>Huffman Coding</h3>
+                    <p><strong>Efficiency:</strong> O(n log n) due to priority queue operations.<br>
+                    <strong>Use:</strong> Data compression and encoding.</p>
+                    <pre><code>
 def huffman_coding(frequencies):
     import heapq
     heap = [[weight, [symbol, '']] for symbol, weight in frequencies.items()]
@@ -161,17 +178,20 @@ def huffman_coding(frequencies):
         heapq.heappush(heap, [lo[0] + hi[0]] + lo[1:] + hi[1:])
 
     return sorted(heapq.heappop(heap)[1:], key=lambda p: (len(p[-1]), p))
-        </code></pre>
-    </section>
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <!-- Footer -->
     <footer>
-        &copy; 2024 Suleman Agasimani. All rights reserved.
+        <div class="container">
+            <p>&copy; 2024 Suleman Agasimani. All rights reserved.</p>
+        </div>
     </footer>
 
-    <!-- Theme Toggle Button -->
     <div class="theme-toggle" onclick="toggleTheme()">
-        🌙
+        <i class="fas fa-moon"></i>
     </div>
 </body>
 </html>
