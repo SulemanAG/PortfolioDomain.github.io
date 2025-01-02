@@ -3,135 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Projects | Dark Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <title>DAA Course Project</title>
-    <script src="script.js" defer></script>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #1a73e8;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-        section {
-            background-color: #333;
-            color: white;
-            margin: 10px;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            font-size: 14px;
-        }
-        section h2 {
-            font-size: 18px;
-        }
-        section ul li {
-            font-size: 12px;
-            margin-bottom: 8px;
-        }
-        .button {
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: #1a73e8;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
-        }
-        .button:hover {
-            background-color: #4285f4;
-        }
-
-        .theme-toggle {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 24px;
-            color: #f9f9f9;
-            cursor: pointer;
-        }
-
-        #business-ideas ul li {
-            margin-bottom: 12px;
-        }
-
-        /* Dark mode styling */
-        body.dark-mode {
-            background-color: #121212;
-            color: #f9f9f9;
-        }
-
-        body.dark-mode header {
-            background-color: #333;
-        }
-
-        body.dark-mode section {
-            background-color: #1c1c1c;
-        }
-    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body class="dark-mode">
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="learning-outcomes.html">Learning Outcomes</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-    <h1>Smart City Urban Planning Project</h1>
-</header>
+    <main>
+        <section id="projects" class="fade-in">
+            <div class="container">
+                <h1>My Projects</h1>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h2>Project 1</h2>
+                        <img src="https://via.placeholder.com/300x200" alt="Project 1">
+                        <p>Description of Project 1. This project involved [key technologies/concepts] and solved [specific problem].</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                    <div class="project-card">
+                        <h2>Project 2</h2>
+                        <img src="https://via.placeholder.com/300x200" alt="Project 2">
+                        <p>Description of Project 2. In this project, I implemented [feature/functionality] using [technologies].</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                    <div class="project-card">
+                        <h2>Project 3</h2>
+                        <img src="https://via.placeholder.com/300x200" alt="Project 3">
+                        <p>Description of Project 3. This project showcases my skills in [specific area] and resulted in [positive outcome].</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<!-- Moon Icon -->
-<div class="theme-toggle" onclick="toggleTheme()">🌙</div>
-
-<section id="problem-statement">
-    <h2>Problem Statement</h2>
-    <p>
-        Data-driven urban planning system for smart cities with minimal vehicle usage. It will use efficient data structures
-        and algorithms to optimize transportation, resource management, and governance while promoting environmental
-        sustainability and enhancing tourism opportunities. The system will focus on leveraging real-time data and predictive
-        analytics to ensure efficient, eco-friendly city operations.
-    </p>
-</section>
-
-<section id="use-cases">
-    <h2>Use Cases</h2>
-    <ul>
-        <li><strong>Smart City Traffic Optimization:</strong> Efficiently manage traffic flow and reduce congestion by analyzing real-time data from various sensors, cameras, and traffic lights. Use machine learning algorithms and real-time data analytics to optimize signal timings, reroute traffic, and reduce overall vehicle usage in congested areas, thus promoting public transportation and shared mobility.</li>
-        <li><strong>Public Transportation Efficiency:</strong> Improve public transportation routes and schedules based on user demand, traffic conditions, and other factors. Predictive algorithms can be applied to assess travel patterns and adjust schedules dynamically.</li>
-        <li><strong>Smart Parking Systems:</strong> Reduce the need for private vehicle usage by offering easy access to available parking spots and promoting shared mobility services. Utilize real-time data to provide users with information about parking availability.</li>
-        <li><strong>Sustainable Resource Management:</strong> Optimize the management of resources (water, electricity, etc.) by monitoring usage patterns and adjusting based on demand.</li>
-        <li><strong>Environmental Impact Reduction:</strong> Minimize the environmental footprint of transportation and city operations by encouraging the use of electric vehicles (EVs), cycling, and walking.</li>
-        <li><strong>Tourism Management and Promotion:</strong> Enhance tourism opportunities by providing efficient routes and minimizing traffic in key tourist areas.</li>
-        <li><strong>Smart Governance for Efficient City Operations:</strong> Improve the effectiveness of city governance by providing real-time insights into various urban metrics such as traffic flow, pollution levels, and public transport usage.</li>
-        <li><strong>Energy Efficiency and Sustainability:</strong> Reduce energy consumption through smart management of city infrastructure.</li>
-        <li><strong>Health and Safety Management:</strong> Ensure public health and safety by reducing environmental impact of transportation and improving emergency response times.</li>
-    </ul>
-</section>
-
-<section id="business-ideas">
-    <h2>Business Ideas</h2>
-    <ul>
-        <li><strong>Predicting Optimal Tourist Routes:</strong> Managed by Varun</li>
-        <li><strong>Sorting Menu Items:</strong> Managed by Vishal</li>
-        <li><strong>Monitoring Traffic Flow:</strong> Managed by Saif Ali</li>
-        <li><strong>Optimizing Waste Management Routes:</strong> Managed by Suleman A</li>
-        <li><strong>Monitoring Water Usage in Residential Areas:</strong> Managed by Varun & Vishal</li>
-        <li><strong>Optimizing City-Wide Internet Connectivity:</strong> Managed by Saif & Suleman</li>
-    </ul>
-    <a href="business.html" class="button">Know More</a>
-</section>
-
-<section>
-    <h2>Project Managed by Me</h2>
-    <ul>
-        <li>Optimizing City-Wide Internet Connectivity</li>
-        <li>Optimizing Waste Management Routes</li>
-    </ul>
-    <a href="myproject.html" class="button" target="_blank">Know More</a>
-</section>
-
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 [Your Name]. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
+
