@@ -4,24 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>My Managed Projects</title>
-    <link rel="stylesheet" href="styles.css">
-     <script src="script.js" defer></script>
+    <title>Projects managed by me</title>
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #808080;  /* Grey background */
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #1a73e8;
+            color: black;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            background-color: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+            font-size: 24px;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Light Mode Styles */
+        body.light-mode {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        section.light-mode {
+            background-color: #fff;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        section.dark-mode {
+            background-color: #2a2a2a;
+            color: #e0e0e0;
+        }
+    </style>
 </head>
-<body>
+<body class="light-mode">
 
 <header>
     <h1>Projects Managed by Me</h1>
 </header>
 
+<!-- Theme Toggle Button -->
+<div class="theme-toggle" onclick="toggleTheme()">☀️</div>
+
 <section>
     <h2>Optimizing City-Wide Internet Connectivity</h2>
-    <p>This project focuses on optimizing the placement of Wi-Fi hotspots in a smart city using minimum spanning tree algorithms, ensuring efficient and equitable access to high-speed internet for all residents.</p>
+    <p><strong>Explanation:</strong> In smart cities, internet connectivity is essential to support a range of services, from traffic management to health and education. The goal of this project is to ensure that all residents of the city have access to high-speed internet by strategically placing Wi-Fi hotspots. This can be achieved through the application of Minimum Spanning Tree (MST) algorithms, which help minimize the total infrastructure cost while maintaining optimal coverage of the urban area.</p>
+    
+    <p><strong>How to Implement:</strong> 
+    - **Mapping the Area**: Begin by identifying key locations across the city that need coverage, such as public areas, schools, hospitals, and high-traffic zones. This requires the use of geographic data systems (GIS) to map out the city’s roads, buildings, and potential hotspots.
+    
+    - **Modeling as a Graph**: Treat the problem as a graph, where each node represents a potential location for a Wi-Fi hotspot, and edges represent the cost (distance or infrastructure) between these locations. 
+    - **Choosing the Algorithm**: Use either Prim’s or Kruskal’s algorithm to determine the MST. Both algorithms have their merits. Prim’s algorithm starts with a node and explores the least cost edges to connect all nodes, while Kruskal’s algorithm sorts all edges by weight and then selects the least cost edges to form the MST. In this case, the algorithm would minimize the total distance for wiring and installation.
+    
+    - **Placing Hotspots**: The selected locations based on the MST will then be the ideal spots for Wi-Fi installations. These locations should be in close proximity to areas with high foot traffic while minimizing redundancy.
+
+    - **Dynamic Updates with Traffic Data**: To improve the network and adapt to changing conditions (e.g., construction, population growth, seasonal events), the system should integrate real-time traffic data, adjusting hotspot placements as needed.
+
+    <p><strong>Problems During Implementation:</strong></p>
+    <ul>
+        <li><strong>High Initial Setup Cost:</strong> Even though the MST minimizes the wiring and setup cost, the initial cost of infrastructure (such as routers, antennas, fiber optics) can be significant, especially in dense urban areas where the terrain is complex.</li>
+        <li><strong>Coverage in Dense Urban Areas:</strong> Large cities with high-rise buildings and narrow alleyways can present challenges in achieving optimal coverage. Signal interference and limited line-of-sight can prevent effective signal distribution, requiring the installation of more advanced technology like mesh networking to ensure connectivity in hard-to-reach areas.</li>
+        <li><strong>Network Interference:</strong> Signal degradation due to physical barriers (buildings, trees) and interference from other wireless networks can hinder the effectiveness of the Wi-Fi hotspots. To solve this, additional infrastructure like signal repeaters or advanced routing algorithms may be necessary.</li>
+        <li><strong>Maintenance and Upgrades:</strong> Over time, infrastructure may need to be updated or expanded to accommodate increased demand or new technologies (e.g., 5G). Ensuring a long-term sustainable model for scaling up the network is a challenge.</li>
+    </ul>
 </section>
 
 <section>
     <h2>Optimizing Waste Management Routes</h2>
-    <p>This initiative aims to minimize fuel consumption and operational costs in waste collection through optimal route planning using Dijkstra's algorithm. The goal is to reduce carbon emissions and improve the efficiency of waste management systems.</p>
+    <p><strong>Explanation:</strong> Efficient waste management is a critical component of a sustainable urban environment. This project aims to optimize the waste collection process by applying Dijkstra’s Algorithm, a well-known graph search algorithm that calculates the shortest paths from a source to all other nodes. In this case, the waste collection trucks are the “nodes,” and the roads connecting the collection points are the “edges.” The goal is to minimize the total travel distance, reducing fuel consumption, emissions, and operational costs.</p>
+    
+    <p><strong>How to Implement:</strong>
+    - **Graph Representation**: The city’s road network is represented as a graph, where each intersection or waste collection point is a node, and each road is an edge with a weight corresponding to the distance or travel time.
+    
+    - **Running Dijkstra’s Algorithm**: To find the optimal routes, Dijkstra’s algorithm is applied to calculate the shortest paths from the waste collection depot to all the waste collection points across the city. By calculating the shortest path for each waste collection vehicle, the total travel distance and fuel consumption are minimized.
+    
+    - **Incorporating Real-Time Data**: Real-time traffic data is incorporated into the algorithm to adjust routes dynamically. This is crucial because traffic conditions, road closures, or accidents can significantly impact the efficiency of waste collection. The system can update the optimal route to avoid congestion or other delays.
+    
+    - **Multi-Vehicle Coordination**: If there are multiple waste collection trucks, each one must follow a different route. To coordinate this, the system may use advanced algorithms like Vehicle Routing Problems (VRP), which extend Dijkstra’s algorithm to optimize the routes for multiple vehicles simultaneously.
+
+    - **Feedback Loop**: As trucks collect waste, the system can feed real-time data back into the system, allowing for continuous optimization and ensuring that new patterns or inefficiencies are addressed immediately.
+
+    <p><strong>Problems During Implementation:</strong></p>
+    <ul>
+        <li><strong>Dynamic Traffic Conditions:</strong> While Dijkstra’s algorithm calculates the shortest path statically, the real world is dynamic. Traffic congestion, accidents, or roadworks can change the optimal route at any time. Continuous, real-time data updates are necessary to adapt to these conditions. However, integrating such data into the system adds complexity.</li>
+        <li><strong>Handling Traffic Variability:</strong> Traffic conditions can fluctuate greatly depending on time of day, weather, or special events (e.g., parades, festivals). Incorporating all these variables into the algorithm while maintaining system performance is a significant challenge.</li>
+        <li><strong>Scalability and Efficiency:</strong> As the city grows or the fleet of waste collection vehicles increases, the system must scale to handle more data and more complex routing. Scaling Dijkstra’s algorithm to handle a larger number of vehicles and collection points can strain computational resources, requiring more sophisticated optimization algorithms or cloud-based solutions.</li>
+        <li><strong>Data Collection and Accuracy:</strong> Accurate and up-to-date information on waste generation patterns, vehicle positions, and road conditions is essential. Any inaccuracies in this data can lead to suboptimal routing and higher operational costs.</li>
+    </ul>
 </section>
 
 </body>
