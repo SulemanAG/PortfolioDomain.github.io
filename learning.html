@@ -1,1 +1,289 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Overview - Kaveri Vana (Smart City)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            color: #ffffff;
+        }
+        header {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        header h1 span {
+            display: block;
+            font-size: 1.5rem;
+            color: #facc15;
+        }
+        section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        section h2, h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #06b6d4;
+            display: inline-block;
+        }
+        section p {
+            margin: 1rem 0;
+            line-height: 1.6;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background-color: #1e293b;
+            color: #ffffff;
+            text-align: left;
+        }
+        table th, table td {
+            padding: 1rem;
+            border: 1px solid #ffffff;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+        }
+        canvas {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        @media screen and (max-width: 768px) {
+            section {
+                padding: 1rem;
+            }
+            table, table th, table td {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Project Overview</h1>
+        <h1><span>ಕಾವೇರಿ ವನ (Kaveri Vana)</span></h1>
+    </header>
+    <section>
+        <h2>Welcome to Smart City Kaveri Vana (ಕಾವೇರಿ ವನ)</h2>
+        
+        <!-- City Details -->
+        <p>
+            <strong style="color: #facc15;">City Name:</strong> <span style="color: #ffffff;">Kaveri Vana</span><br>
+            <strong style="color: #facc15;">Taluk:</strong> <span style="color: #ffffff;">Mysore</span><br>
+            <strong style="color: #facc15;">State:</strong> <span style="color: #ffffff;">Karnataka</span><br>
+            <strong style="color: #facc15;">Country:</strong> <span style="color: #ffffff;">India</span><br>
+            <strong style="color: #facc15;">Pincode:</strong> <span style="color: #ffffff;">570002</span><br>
+            <strong style="color: #facc15;">STD Code:</strong> <span style="color: #ffffff;">0822</span><br>
+            <strong style="color: #facc15;">Time Zone:</strong> <span style="color: #ffffff;">GMT+5:30</span>
+        </p>
+
+        <p>
+            <strong>Introduction:</strong> Kaveri Vana (ಕಾವೇರಿ ವನ) is a new smart city being planned over an area of 1500 square kilometers. The goal is to create a modern, efficient, and sustainable city that uses advanced technology to improve the quality of life for its residents. With innovative infrastructure, smart services, and eco-friendly designs, Kaveri Vana aims to become a model for future urban development.
+        </p>
+
+        <h2>Land Distribution and Budget</h2>
+
+        <!-- Table -->
+        <table>
+            <tr>
+                <th>Sr No</th>
+                <th>Main Land Distribution</th>
+                <th>Subparts</th>
+                <th>Land Distribution %</th>
+                <th>Budget (₹ Crores)</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Main Green Spaces</td>
+                <td>Parks and Gardens, Agriculture Field, Waterfront Green Spaces, Eco-friendly Zones, Green Buffer Zones</td>
+                <td>15%</td>
+                <td>₹1,682.1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Main Residential Areas</td>
+                <td>Apartments, Villas, Affordable Housing, Schools and Healthcare Centers</td>
+                <td>26%</td>
+                <td>₹2,915.64</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Main Commercial Zones</td>
+                <td>Offices, Retail Spaces, High-Density Business Areas</td>
+                <td>9%</td>
+                <td>₹1,009.26</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Main Industrial Areas</td>
+                <td>Smart Factories, Logistics Hubs</td>
+                <td>5%</td>
+                <td>₹560.7</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Main Utilities and Services</td>
+                <td>Renewable Energy, Water Treatment Facilities</td>
+                <td>4%</td>
+                <td>₹448.56</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Main Tourist Spots</td>
+                <td>Zoo, Bird Sanctuary</td>
+                <td>3%</td>
+                <td>₹336.42</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Main Recreational & Cultural Spaces</td>
+                <td>Cultural Centers, Sports Complexes</td>
+                <td>3%</td>
+                <td>₹336.42</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Main Transportation Infrastructure</td>
+                <td>Roads, Bike Lanes, Smart Public Transport Hubs, Toll Plaza</td>
+                <td>11%</td>
+                <td>₹1,233.54</td>
+            </tr>
+            <tr>
+                <td colspan="4"><strong>Total Budget</strong></td>
+                <td><strong>₹11,214 Crores</strong></td>
+            </tr>
+        </table>
+
+        <!-- Bar Graphs for Land Distribution and Budget -->
+        <div class="container">
+            <h2 style="text-align: center;">Land Distribution (in %)</h2>
+            <canvas id="landDistributionChart"></canvas>
+        </div>
+
+        <div class="container">
+            <h2 style="text-align: center;">Budget Distribution (in %)</h2>
+            <canvas id="budgetDistributionChart"></canvas>
+        </div>
+
+        <!-- Map of Kaveri Vana -->
+        <div class="container">
+            <h2 style="text-align: center;">Map of Kaveri Vana</h2>
+            <img src="WhatsApp Image 2024-12-26 at 15.33.12_0aa25f1a.jpg" alt="Map of Kaveri Vana" style="width: 100%; max-width: 800px;">
+        </div>
+
+        <script>
+            // Data for Land Distribution
+            const landLabels = [
+                "Green Spaces", 
+                "Residential Areas", 
+                "Commercial Zones", 
+                "Industrial Areas", 
+                "Utilities", 
+                "Tourist Spots", 
+                "Recreational Spaces", 
+                "Transportation"
+            ];
+            const landData = [15, 26, 9, 5, 4, 3, 3, 11];
+
+            const landDistributionConfig = {
+                type: 'bar',
+                data: {
+                    labels: landLabels,
+                    datasets: [{
+
+                        label: 'Land Distribution (%)',
+                        data: landData,
+                        backgroundColor: [
+                            '#3b82f6', '#06b6d4', '#facc15', '#ef4444', 
+                            '#22c55e', '#f97316', '#6366f1', '#14b8a6'
+                        ],
+                        borderColor: '#000',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        title: {
+                            display: true,
+                            text: 'Land Distribution in %'
+                        }
+                    },
+                    scales: {
+                        x: { title: { display: true, text: 'Land Categories' } },
+                        y: { 
+                            title: { display: true, text: 'Percentage (%)' },
+                            beginAtZero: true
+                        }
+                    }
+                }
+            };
+
+            // Data for Budget Distribution
+            const budgetData = [15, 26, 9, 5, 4, 3, 3, 11];
+
+            const budgetDistributionConfig = {
+                type: 'bar',
+                data: {
+                    labels: landLabels,
+                    datasets: [{
+                        label: 'Budget Distribution (%)',
+                        data: budgetData,
+                        backgroundColor: [
+                            '#3b82f6', '#06b6d4', '#facc15', '#ef4444', 
+                            '#22c55e', '#f97316', '#6366f1', '#14b8a6'
+                        ],
+                        borderColor: '#000',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        title: {
+                            display: true,
+                            text: 'Budget Distribution in %'
+                        }
+                    },
+                    scales: {
+                        x: { title: { display: true, text: 'Budget Categories' } },
+                        y: { 
+                            title: { display: true, text: 'Percentage (%)' },
+                            beginAtZero: true
+                        }
+                    }
+                }
+            };
+
+            // Render the Charts
+            new Chart(
+                document.getElementById('landDistributionChart'),
+                landDistributionConfig
+            );
+
+            new Chart(
+                document.getElementById('budgetDistributionChart'),
+                budgetDistributionConfig
+            );
+        </script>
+    </section>
+</body>
+</html>
