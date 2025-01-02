@@ -7,11 +7,10 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #1a73e8, #4285f4);
+    background: #121212; /* Dark theme background */
     color: #fff;
     transition: background 0.3s ease, color 0.3s ease;
     overflow-x: hidden;
-    padding: 0;
 }
 
 .container {
@@ -23,14 +22,14 @@ body {
 /* Header */
 header {
     text-align: center;
-    padding: 3rem;
+    padding: 2rem;
     background: rgba(0, 0, 0, 0.7);
     border-bottom: 2px solid #fff;
     animation: slideDown 1s ease-out;
 }
 
 header h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-family: 'Raleway', sans-serif;
     margin-bottom: 0.5rem;
 }
@@ -48,7 +47,7 @@ nav a {
     color: #fff;
     font-size: 1.1rem;
     margin: 0 15px;
-    padding: 10px 20px;
+    padding: 8px 15px;
     border: 2px solid #fff;
     border-radius: 50px;
     transition: background 0.3s ease, color 0.3s ease;
@@ -59,142 +58,64 @@ nav a:hover {
     color: #1a73e8;
 }
 
-/* Personal Details Section */
-#personal-details {
-    margin: 2rem auto;
+/* Sections */
+section {
+    margin: 1rem auto;
     padding: 1.5rem;
     background: rgba(255, 255, 255, 0.15);
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 80%;
-    text-align: left; /* Align text to the left */
+    text-align: left;
+    animation: fadeIn 1.2s ease;
+    max-width: 800px;
 }
 
-#personal-details h2 {
-    font-size: 2rem;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-}
-
-#personal-details ul {
-    list-style: none;
-}
-
-#personal-details li {
-    margin-bottom: 0.8rem;
-    font-size: 1.1rem;
-}
-
-#personal-details strong {
-    color: #ff5722;
-}
-
-/* Find Me Online Section */
-#find-me-online {
-    margin: 2rem auto;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-#find-me-online h2 {
-    font-size: 2rem;
+section h2 {
+    font-size: 1.8rem;
+    font-family: 'Raleway', sans-serif;
     margin-bottom: 1rem;
     text-transform: uppercase;
 }
 
-#find-me-online ul {
-    list-style: none;
+section p {
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
-#find-me-online .social-btn {
+/* Buttons */
+.button {
     display: inline-block;
-    margin: 10px;
-    padding: 12px 25px;
+    margin: 10px 5px;
+    padding: 10px 20px;
     font-size: 1rem;
     color: #fff;
-    background-color: #1a73e8;
-    border-radius: 30px;
+    background: #ff5722;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    border-radius: 30px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-#find-me-online .social-btn:hover {
-    background-color: #ff5722;
+.button:hover {
+    background: #ff7043;
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* Project Section */
-#project {
-    margin: 2rem auto;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    animation: fadeIn 1.2s ease;
-}
-
-/* Find Me Section */
-#find-me {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-#find-me img {
-    width: 80%;
-    max-width: 400px;
-    border-radius: 10px;
-    transition: opacity 0.3s ease-in-out;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background: #121212;
-    color: #fff;
-}
-
-body.dark-mode #personal-details,
-body.dark-mode #find-me-online,
-body.dark-mode #project {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-/* Theme Toggle */
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #ffeb3b;
-    color: #000;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+/* Find Me Online */
+.links {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: transform 0.4s ease;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 1rem;
 }
 
-.theme-toggle:hover {
-    transform: rotate(360deg);
-}
-
-input[type="checkbox"] {
-    display: none;
-}
-
-input[type="checkbox"]:checked ~ body {
-    background: #fff;
-    color: #000;
-}
-
-input[type="checkbox"]:checked ~ body.dark-mode {
-    background: #121212;
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
 }
 
 /* Animations */
@@ -220,8 +141,37 @@ input[type="checkbox"]:checked ~ body.dark-mode {
     }
 }
 
-.animate {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 1s ease-in, transform 1s ease-in;
+/* Dark Mode */
+.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+/* Light Mode */
+.light-mode {
+    background-color: #fff;
+    color: #121212;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #ffeb3b;
+    color: #000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(360deg);
 }
