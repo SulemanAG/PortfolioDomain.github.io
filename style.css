@@ -1,63 +1,5 @@
-/* General Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    transition: background 0.3s ease, color 0.3s ease;
-    overflow-x: hidden;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Header */
-header {
-    text-align: center;
-    padding: 3rem;
-    background: rgba(0, 0, 0, 0.7);
-    border-bottom: 2px solid #fff;
-    animation: slideDown 1s ease-out;
-}
-
-header h1 {
-    font-size: 3.5rem;
-    font-family: 'Raleway', sans-serif;
-    margin-bottom: 0.5rem;
-}
-
-header p {
-    font-size: 1.2rem;
-}
-
-nav {
-    margin-top: 1rem;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.1rem;
-    margin: 0 15px;
-    padding: 10px 20px;
-    border: 2px solid #fff;
-    border-radius: 50px;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-nav a:hover {
-    background: #fff;
-    color: #1a73e8;
-}
-
-/* Sections */
-section {
+/* Find Me Online Section */
+#find-me-online {
     margin: 2rem auto;
     padding: 2rem;
     background: rgba(255, 255, 255, 0.15);
@@ -65,139 +7,30 @@ section {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     animation: fadeIn 1.2s ease;
-    transition: all 0.3s ease;
 }
 
-section h2 {
+#find-me-online h2 {
     font-size: 2rem;
     font-family: 'Raleway', sans-serif;
     margin-bottom: 1rem;
     text-transform: uppercase;
 }
 
-section p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-/* Personal Details Section */
-#personal-details ul {
+#find-me-online ul {
     list-style: none;
     margin-top: 1rem;
 }
 
-#personal-details li {
-    font-size: 1.2rem;
+#find-me-online li {
     margin-bottom: 0.8rem;
 }
 
-/* Buttons */
-.button {
-    display: inline-block;
-    margin: 15px 5px;
-    padding: 12px 25px;
-    font-size: 1rem;
-    color: #fff;
-    background: #ff5722;
+#find-me-online a {
     text-decoration: none;
-    border-radius: 30px;
-    transition: transform 0.3s ease, background 0.3s ease;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    color: #1a73e8;
+    font-size: 1.1rem;
 }
 
-.button:hover {
-    background: #ff7043;
-    transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
-
-/* Footer */
-footer {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 1rem;
-    text-align: center;
-    font-size: 0.9rem;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideDown {
-    from {
-        transform: translateY(-100px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Theme Toggle */
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #ffeb3b;
-    color: #000;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: transform 0.4s ease;
-}
-
-.theme-toggle:hover {
-    transform: rotate(360deg);
-}
-
-body.dark .theme-toggle {
-    background: #4285f4;
-    color: #fff;
-}
-
-body.dark {
-    background: #121212;
-    color: #ffffff;
-}
-
-body.dark section {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* Scroll animation */
-img {
-    transition: transform 0.3s ease-in-out;
-}
-
-#find-me img {
-    max-width: 100%;
-    transition: opacity 0.5s ease;
-}
-
-#find-me img.fade-out {
-    opacity: 0;
-}
-
-#find-me img.fade-in {
-    opacity: 1;
-}
-
-/* Add a border to the edges of the page */
-body {
-    border: 10px solid #ffffff;
+#find-me-online a:hover {
+    color: #ff5722;
 }
