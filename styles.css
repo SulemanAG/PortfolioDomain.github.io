@@ -175,3 +175,23 @@ footer {
 .theme-toggle:hover {
     transform: rotate(360deg);
 }
+
+/* Fade on Scroll */
+.fade-on-scroll {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-on-scroll.visible {
+    opacity: 1;
+}
+
+/* Hover Animation */
+.hover-animate {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hover-animate.animate {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
