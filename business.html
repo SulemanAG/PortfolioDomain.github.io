@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Cases - Smart City Urban Planning</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            background-color: #808080;  /* Grey background */
             margin: 0;
             padding: 0;
         }
         header {
             background-color: #1a73e8;
-            color: white;
+            color: black;
             padding: 20px;
             text-align: center;
         }
@@ -56,9 +57,16 @@
         .button:hover {
             background-color: #4285f4;
         }
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
     </style>
 </head>
-<body>
+<body class="light-mode">
 
 <header>
     <h1>Business Cases - Smart City Urban Planning Project</h1>
@@ -170,6 +178,11 @@
         <li>Ensuring network reliability during peak usage hours or adverse conditions.</li>
     </ul>
 </section>
+
+<!-- Theme Toggle Button -->
+<div class="theme-toggle" onclick="toggleTheme()">
+    🌙
+</div>
 
 </body>
 </html>
