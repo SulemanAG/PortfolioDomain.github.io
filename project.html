@@ -8,7 +8,7 @@
     <script src="script.js" defer></script>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Changed font */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f4f9;
             margin: 0;
             padding: 0;
@@ -20,20 +20,20 @@
             text-align: center;
         }
         section {
-            background-color: #333; /* Initial black background */
-            color: white; /* Initial text color white */
+            background-color: #333;
+            color: white;
             margin: 10px;
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            font-size: 14px; /* Reduced font size */
+            font-size: 14px;
         }
         section h2 {
             font-size: 18px;
         }
         section ul li {
-            font-size: 12px; /* Smaller text for list items */
-            margin-bottom: 8px; /* Leave space between cases */
+            font-size: 12px;
+            margin-bottom: 8px;
         }
         .button {
             display: inline-block;
@@ -49,29 +49,42 @@
             background-color: #4285f4;
         }
 
-        /* Moon Icon on top-right */
-        .moon {
+        .theme-toggle {
             position: absolute;
             top: 15px;
             right: 15px;
-            font-size: 24px; /* Moon icon size */
-            color: #f9f9f9; /* Light color for visibility */
+            font-size: 24px;
+            color: #f9f9f9;
             cursor: pointer;
         }
-        /* To adjust business case spacing */
+
         #business-ideas ul li {
-            margin-bottom: 12px; /* Space between each business case */
+            margin-bottom: 12px;
+        }
+
+        /* Dark mode styling */
+        body.dark-mode {
+            background-color: #121212;
+            color: #f9f9f9;
+        }
+
+        body.dark-mode header {
+            background-color: #333;
+        }
+
+        body.dark-mode section {
+            background-color: #1c1c1c;
         }
     </style>
 </head>
-<body>
+<body class="dark-mode">
 
 <header>
     <h1>Smart City Urban Planning Project</h1>
 </header>
 
 <!-- Moon Icon -->
-<div class="theme-toggle" onclick="toggleTheme()">☀️</div>
+<div class="theme-toggle" onclick="toggleTheme()">🌙</div>
 
 <section id="problem-statement">
     <h2>Problem Statement</h2>
