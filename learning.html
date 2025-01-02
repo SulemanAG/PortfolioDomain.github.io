@@ -83,6 +83,28 @@
         .button:hover {
             background-color: #005bb5; /* Darker on hover */
         }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: fixed; /* Fixed position */
+            bottom: 20px; /* Distance from bottom */
+            right: 20px; /* Distance from right */
+            background: rgba(255, 255, 255, 0.1); /* Background for button */
+            color: #e0e0e0; /* Button text color */
+            border: none; /* No border */
+            border-radius: 50%; /* Rounded button */
+            width: 40px; /* Width */
+            height: 40px; /* Height */
+            display: flex; /* Flexbox for alignment */
+            justify-content: center; /* Center icon horizontally */
+            align-items: center; /* Center icon vertically */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background 0.3s; /* Smooth background transition */
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2); /* Brighten on hover */
+        }
     </style>
 </head>
 <body class="dark-mode">
@@ -92,16 +114,12 @@
         <h1>Learning - Kwin City Project</h1>
         <nav>
             <ul>
-                <li><a href="index.html" >Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="project.html">Projects</a></li>
-                <li><a href="learning.html"class="active">Learning Outcomes</a></li>
+                <li><a href="learning.html" class="active">Learning Outcomes</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-    </header>
-
-    <header>
-        
         <nav>
             <a href="#learning-courses">Learning During the Courses</a>
             <a href="#challenges">Challenges</a>
@@ -175,5 +193,10 @@
     <footer>
         <p>&copy; 2024 Suleman Agasimani. All rights reserved.</p>
     </footer>
+
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+    </div>
 </body>
 </html>
