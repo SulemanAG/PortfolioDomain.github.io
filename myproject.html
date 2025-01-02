@@ -66,10 +66,19 @@
 
         /* Style for spacing and color consistency */
         .how-to-implement {
-            color: inherit; /* Ensures same color as explanation */
+            color: #555; /* Same color as explanation text */
             font-size: 16px;
             line-height: 1.6;
+            margin-top: 15px; /* Space between explanation and how to implement */
         }
+
+        .problem-arising {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 15px; /* Space between How to Implement and Problem Arising */
+        }
+
         ul {
             margin-top: 10px;
             padding-left: 20px;
@@ -103,6 +112,19 @@
             <li><strong>Dynamic Updates with Traffic Data:</strong> To improve the network and adapt to changing conditions (e.g., construction, population growth, seasonal events), the system should integrate real-time traffic data, adjusting hotspot placements as needed.</li>
         </ul>
     </div>
+
+    <div class="problem-arising">
+        <p><strong>Problem Arising During Implementation:</strong></p>
+        <ul>
+            <li><strong>Data Quality Issues:</strong> The accuracy of GIS data can sometimes be unreliable, especially when mapping older areas or regions with incomplete records, which could affect hotspot placement accuracy.</li>
+            
+            <li><strong>Infrastructure Limitations:</strong> Existing city infrastructure may not always support the installation of necessary equipment like fiber-optic cables, resulting in higher costs or delays.</li>
+            
+            <li><strong>High Traffic Areas:</strong> Identifying ideal locations for hotspots in densely populated or high-traffic areas may result in congestion, affecting network performance and user experience.</li>
+            
+            <li><strong>Integration with Other Services:</strong> Real-time traffic data and other dynamic factors may be challenging to integrate effectively, leading to adjustments in hotspot placements that might be hard to manage or implement efficiently.</li>
+        </ul>
+    </div>
 </section>
 
 <section>
@@ -117,6 +139,19 @@
             <li><strong>Running Dijkstra’s Algorithm:</strong> To find the optimal routes, Dijkstra’s algorithm is applied to calculate the shortest paths from the waste collection depot to all the waste collection points across the city. By calculating the shortest path for each waste collection vehicle, the total travel distance and fuel consumption are minimized.</li>
             
             <li><strong>Incorporating Real-Time Data:</strong> Real-time traffic data is incorporated into the algorithm to adjust routes dynamically. This is crucial because traffic conditions, road closures, or accidents can significantly impact the efficiency of waste collection. The system can update the optimal route to avoid congestion or other delays.</li>
+        </ul>
+    </div>
+
+    <div class="problem-arising">
+        <p><strong>Problem Arising During Implementation:</strong></p>
+        <ul>
+            <li><strong>Real-Time Data Integration:</strong> The integration of real-time traffic data can be complicated, especially when different sources of data are inconsistent or unavailable.</li>
+            
+            <li><strong>Complexity of Urban Roads:</strong> The complexity of urban roads, with one-way streets, road closures, and pedestrian zones, can increase the difficulty in finding the shortest path for waste trucks.</li>
+            
+            <li><strong>Variable Traffic Conditions:</strong> Traffic conditions can change unexpectedly, making it hard to update the routes in real-time or plan the routes in advance.</li>
+            
+            <li><strong>Operational Constraints:</strong> Waste collection routes may need to accommodate other logistical factors such as vehicle capacity, timing restrictions, and legal regulations, which can make the solution less straightforward.</li>
         </ul>
     </div>
 </section>
