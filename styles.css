@@ -6,11 +6,12 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #1a73e8, #4285f4);
     color: #fff;
     transition: background 0.3s ease, color 0.3s ease;
     overflow-x: hidden;
+    padding: 0;
 }
 
 .container {
@@ -65,7 +66,14 @@ nav a:hover {
     background: rgba(255, 255, 255, 0.15);
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
+    width: 80%;
+    text-align: left;
+}
+
+#personal-details h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
 }
 
 #personal-details ul {
@@ -74,6 +82,11 @@ nav a:hover {
 
 #personal-details li {
     margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+#personal-details strong {
+    color: #ff5722;
 }
 
 /* Find Me Online Section */
@@ -84,33 +97,32 @@ nav a:hover {
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    animation: fadeIn 1.2s ease;
 }
 
 #find-me-online h2 {
     font-size: 2rem;
-    font-family: 'Raleway', sans-serif;
     margin-bottom: 1rem;
     text-transform: uppercase;
 }
 
 #find-me-online ul {
     list-style: none;
-    margin-top: 1rem;
 }
 
-#find-me-online li {
-    margin-bottom: 0.8rem;
-}
-
-#find-me-online a {
+#find-me-online .social-btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #1a73e8;
+    border-radius: 30px;
     text-decoration: none;
-    color: #1a73e8;
-    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
 }
 
-#find-me-online a:hover {
-    color: #ff5722;
+#find-me-online .social-btn:hover {
+    background-color: #ff5722;
 }
 
 /* Project Section */
@@ -122,6 +134,31 @@ nav a:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     animation: fadeIn 1.2s ease;
+}
+
+/* Find Me Section */
+#find-me {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#find-me img {
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: #121212;
+    color: #fff;
+}
+
+body.dark-mode #personal-details,
+body.dark-mode #find-me-online,
+body.dark-mode #project {
+    background: rgba(0, 0, 0, 0.8);
 }
 
 /* Theme Toggle */
@@ -154,6 +191,10 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked ~ body {
     background: #fff;
     color: #000;
+}
+
+input[type="checkbox"]:checked ~ body.dark-mode {
+    background: #121212;
 }
 
 /* Animations */
