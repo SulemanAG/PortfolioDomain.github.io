@@ -7,14 +7,90 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212; /* Dark background for dark mode */
+            color: #e0e0e0; /* Light text for visibility */
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.5s, color 0.5s; /* Smooth transition */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #1a73e8;
+            border-color: #1a73e8;
+        }
+
+        section {
+            background-color: #2a2a2a; /* Darker background for sections */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            color: #f0c674; /* Different color for section headers */
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #ffcc00; /* Accent color for subsections */
+        }
+
+        ul {
+            margin-left: 20px; /* Indentation for lists */
+            list-style-type: disc; /* Bullet points for clarity */
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        
+        .button {
+            display: inline-block;
+            background-color: #1a73e8; /* Button background color */
+            color: #ffffff; /* Button text color */
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #005bb5; /* Darker on hover */
+        }
+    </style>
 </head>
 <body class="dark-mode">
-    
 
     <!-- Header Section -->
     <header>
         <h1>Learning - Kwin City Project</h1>
-        <p>Exploring knowledge and challenges in Design and Analysis of Algorithms</p>
+        <p>Exploring knowledge and challenges in the Design and Analysis of Algorithms</p>
         <nav>
             <a href="#learning-courses">Learning During the Courses</a>
             <a href="#challenges">Challenges</a>
