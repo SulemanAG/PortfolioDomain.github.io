@@ -62,5 +62,28 @@ window.addEventListener('scroll', checkVisibility);
 // Call the function on page load to check the sections visibility
 checkVisibility();
 
-// You can also call the toggleTheme function to toggle the theme on an event such as a button click
-document.querySelector('.theme-toggle').addEventListener('click', toggleTheme);
+// Set the initial theme and button icon based on current theme in localStorage or default to dark mode
+document.addEventListener('DOMContentLoaded', () => {
+    const body = document.body;
+    const themeButton = document.querySelector('.theme-toggle');
+
+    // Check if there is a saved theme in localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
+        themeButton.textContent = '🌙'; // Set moon icon for dark mode
+    } else {
+        body.classList.add('light-mode');
+        themeButton.textContent = '☀️'; // Set sun icon for light mode
+    }
+});
+
+// Add event listener for the theme button to toggle theme
+document.querySelector('.theme-toggle').addEventListener('click', () => {
+    toggleTheme();
+    // Save the current theme in localStorage
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+});
