@@ -8,22 +8,133 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif; /* Clean font style */
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text color */
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.5s, color 0.5s; /* Smooth transition */
+        }
+
+        header {
+            background-color: #1a73e8; /* Header color */
+            color: black; /* Text color for header */
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none; /* Remove default list styling */
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline; /* Inline list items */
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: black; /* Link color in nav */
+            text-decoration: none; /* No underline */
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #ddd; /* Background for hovered and active links */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        main {
+            margin: 20px; /* Space around main content */
+        }
+
+        section {
+            background-color: #2a2a2a; /* Section background */
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        h1, h2 {
+            color: #f0c674; /* Heading color */
+        }
+
+        h1 span {
+            display: block; /* Separate Kwin City */
+            font-size: 24px; /* Font size for city name */
+        }
+
+        p {
+            font-size: 16px; /* Font size for paragraphs */
+            line-height: 1.6; /* Improved line spacing */
+        }
+
+        table {
+            width: 100%; /* Full width for table */
+            border-collapse: collapse; /* No gaps between cells */
+            margin: 20px 0; /* Margin around table */
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left; /* Align text to left */
+            border-bottom: 1px solid #ddd; /* Bottom border for table cells */
+        }
+
+        th {
+            background-color: #3b82f6; /* Header color for table */
+            color: #ffffff; /* Text color for header */
+        }
+
+        .graph-container {
+            margin-top: 20px; /* Margin on top of graph container */
+        }
+
+        footer {
+            text-align: center; /* Center-align footer text */
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #1a1a1a; /* Background color for footer */
+            color: #e0e0e0; /* Text color for footer */
+        }
+
+        footer p {
+            margin: 0; /* Remove margin */
+        }
+
+        .theme-toggle {
+            position: fixed; /* Fixed position */
+            bottom: 20px; /* Distance from bottom */
+            right: 20px; /* Distance from right */
+            background: rgba(255, 255, 255, 0.1); /* Background for button */
+            color: #e0e0e0; /* Button text color */
+            border: none; /* No border */
+            border-radius: 50%; /* Rounded button */
+            width: 40px; /* Width */
+            height: 40px; /* Height */
+            display: flex; /* Flexbox for alignment */
+            justify-content: center; /* Center icon horizontally */
+            align-items: center; /* Center icon vertically */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background 0.3s; /* Smooth background transition */
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2); /* Brighten on hover */
+        }
+    </style>
 </head>
 <body class="dark-mode">
     <!-- Header Section -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html" >Home</a></li>
-                <li><a href="project.html"class="active">Projects</a></li>
-                <li><a href="learning.html">Learning Outcomes</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    <header>
         <div class="container">
-            <h1>Project Overview</h1>
-            <h1><span>Kwin City</span></h1>
+            <h1>Project Overview <span>Kwin City</span></h1>
             <nav>
                 <ul>
                     <li><a href="#land-distribution">Land Distribution</a></li>
