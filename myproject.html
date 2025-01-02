@@ -89,14 +89,6 @@
     - **Placing Hotspots**: The selected locations based on the MST will then be the ideal spots for Wi-Fi installations. These locations should be in close proximity to areas with high foot traffic while minimizing redundancy.
 
     - **Dynamic Updates with Traffic Data**: To improve the network and adapt to changing conditions (e.g., construction, population growth, seasonal events), the system should integrate real-time traffic data, adjusting hotspot placements as needed.
-
-    <p><strong>Problems During Implementation:</strong></p>
-    <ul>
-        <li><strong>High Initial Setup Cost:</strong> Even though the MST minimizes the wiring and setup cost, the initial cost of infrastructure (such as routers, antennas, fiber optics) can be significant, especially in dense urban areas where the terrain is complex.</li>
-        <li><strong>Coverage in Dense Urban Areas:</strong> Large cities with high-rise buildings and narrow alleyways can present challenges in achieving optimal coverage. Signal interference and limited line-of-sight can prevent effective signal distribution, requiring the installation of more advanced technology like mesh networking to ensure connectivity in hard-to-reach areas.</li>
-        <li><strong>Network Interference:</strong> Signal degradation due to physical barriers (buildings, trees) and interference from other wireless networks can hinder the effectiveness of the Wi-Fi hotspots. To solve this, additional infrastructure like signal repeaters or advanced routing algorithms may be necessary.</li>
-        <li><strong>Maintenance and Upgrades:</strong> Over time, infrastructure may need to be updated or expanded to accommodate increased demand or new technologies (e.g., 5G). Ensuring a long-term sustainable model for scaling up the network is a challenge.</li>
-    </ul>
 </section>
 
 <section>
@@ -109,18 +101,6 @@
     - **Running Dijkstra’s Algorithm**: To find the optimal routes, Dijkstra’s algorithm is applied to calculate the shortest paths from the waste collection depot to all the waste collection points across the city. By calculating the shortest path for each waste collection vehicle, the total travel distance and fuel consumption are minimized.
     
     - **Incorporating Real-Time Data**: Real-time traffic data is incorporated into the algorithm to adjust routes dynamically. This is crucial because traffic conditions, road closures, or accidents can significantly impact the efficiency of waste collection. The system can update the optimal route to avoid congestion or other delays.
-    
-    - **Multi-Vehicle Coordination**: If there are multiple waste collection trucks, each one must follow a different route. To coordinate this, the system may use advanced algorithms like Vehicle Routing Problems (VRP), which extend Dijkstra’s algorithm to optimize the routes for multiple vehicles simultaneously.
-
-    - **Feedback Loop**: As trucks collect waste, the system can feed real-time data back into the system, allowing for continuous optimization and ensuring that new patterns or inefficiencies are addressed immediately.
-
-    <p><strong>Problems During Implementation:</strong></p>
-    <ul>
-        <li><strong>Dynamic Traffic Conditions:</strong> While Dijkstra’s algorithm calculates the shortest path statically, the real world is dynamic. Traffic congestion, accidents, or roadworks can change the optimal route at any time. Continuous, real-time data updates are necessary to adapt to these conditions. However, integrating such data into the system adds complexity.</li>
-        <li><strong>Handling Traffic Variability:</strong> Traffic conditions can fluctuate greatly depending on time of day, weather, or special events (e.g., parades, festivals). Incorporating all these variables into the algorithm while maintaining system performance is a significant challenge.</li>
-        <li><strong>Scalability and Efficiency:</strong> As the city grows or the fleet of waste collection vehicles increases, the system must scale to handle more data and more complex routing. Scaling Dijkstra’s algorithm to handle a larger number of vehicles and collection points can strain computational resources, requiring more sophisticated optimization algorithms or cloud-based solutions.</li>
-        <li><strong>Data Collection and Accuracy:</strong> Accurate and up-to-date information on waste generation patterns, vehicle positions, and road conditions is essential. Any inaccuracies in this data can lead to suboptimal routing and higher operational costs.</li>
-    </ul>
 </section>
 
 <script src="script.js"></script>
