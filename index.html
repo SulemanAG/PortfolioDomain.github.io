@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suleman Agasimani's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
 </head>
 
 <body>
+
     <header>
         <h1>Suleman Agasimani</h1>
         <p>Welcome to my portfolio</p>
@@ -64,20 +65,8 @@
         <span id="theme-icon">🌙</span>
     </label>
 
-    <script>
-        const themeToggle = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-
-        themeToggle.addEventListener('change', () => {
-            if (themeToggle.checked) {
-                document.body.classList.add('dark-mode');
-                themeIcon.textContent = '🌞';  // Change to sun icon
-            } else {
-                document.body.classList.remove('dark-mode');
-                themeIcon.textContent = '🌙';  // Change to moon icon
-            }
-        });
-    </script>
+    <!-- Link the JavaScript file here -->
+    <script src="script.js"></script>
 </body>
 
 </html>
