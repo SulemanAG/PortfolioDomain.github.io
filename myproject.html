@@ -20,6 +20,21 @@
             padding: 20px;
             text-align: center;
         }
+        header nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+        header nav a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 0 15px;
+        }
+        header nav a:hover {
+            background-color: #ddd;
+            border-radius: 5px;
+        }
         section {
             background-color: white;
             margin: 20px;
@@ -36,13 +51,6 @@
             font-size: 16px;
             color: #555;
             line-height: 1.6;
-        }
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            font-size: 24px;
-            cursor: pointer;
         }
 
         /* Light Mode Styles */
@@ -89,23 +97,25 @@
 
 <header>
     <h1>Projects Managed by Me</h1>
+    <nav>
+        <a href="#optimizing-connectivity">Optimizing Connectivity</a>
+        <a href="#optimizing-waste">Optimizing Waste Management</a>
+        <a href="index.html">Back to Portfolio</a>
+    </nav>
 </header>
 
-<!-- Theme Toggle Button -->
-<div class="theme-toggle" onclick="toggleTheme()">☀️</div>
-
-<section>
+<section id="optimizing-connectivity">
     <h2>Optimizing City-Wide Internet Connectivity</h2>
     <p><strong>Explanation:</strong> In smart cities, internet connectivity is essential to support a range of services, from traffic management to health and education. The goal of this project is to ensure that all residents of the city have access to high-speed internet by strategically placing Wi-Fi hotspots. This can be achieved through the application of Minimum Spanning Tree (MST) algorithms, which help minimize the total infrastructure cost while maintaining optimal coverage of the urban area.</p>
     
     <div class="how-to-implement">
         <p><strong>How to Implement:</strong></p>
         <ul>
-            <li><strong>Mapping the Area:</strong> Begin by identifying key locations across the city that need coverage, such as public areas, schools, hospitals, and high-traffic zones. This requires the use of geographic data systems (GIS) to map out the city’s roads, buildings, and potential hotspots.</li>
+            <li><strong>Mapping the Area:</strong> Identify key locations across the city that need coverage, such as public areas, schools, hospitals, and high-traffic zones. Use geographic data systems (GIS) to map out the city’s roads, buildings, and potential hotspots.</li>
             
             <li><strong>Modeling as a Graph:</strong> Treat the problem as a graph, where each node represents a potential location for a Wi-Fi hotspot, and edges represent the cost (distance or infrastructure) between these locations.</li>
             
-            <li><strong>Choosing the Algorithm:</strong> Use either Prim’s or Kruskal’s algorithm to determine the MST. Both algorithms have their merits. Prim’s algorithm starts with a node and explores the least cost edges to connect all nodes, while Kruskal’s algorithm sorts all edges by weight and then selects the least cost edges to form the MST. In this case, the algorithm would minimize the total distance for wiring and installation.</li>
+            <li><strong>Choosing the Algorithm:</strong> Use either Prim’s or Kruskal’s algorithm to determine the MST. Prim’s algorithm starts with a node and explores the least-cost edges to connect all nodes, while Kruskal’s algorithm sorts all edges by weight and selects the least-cost edges to form the MST.</li>
             
             <li><strong>Placing Hotspots:</strong> The selected locations based on the MST will then be the ideal spots for Wi-Fi installations. These locations should be in close proximity to areas with high foot traffic while minimizing redundancy.</li>
             
@@ -127,7 +137,7 @@
     </div>
 </section>
 
-<section>
+<section id="optimizing-waste">
     <h2>Optimizing Waste Management Routes</h2>
     <p><strong>Explanation:</strong> Efficient waste management is a critical component of a sustainable urban environment. This project aims to optimize the waste collection process by applying Dijkstra’s Algorithm, a well-known graph search algorithm that calculates the shortest paths from a source to all other nodes. In this case, the waste collection trucks are the “nodes,” and the roads connecting the collection points are the “edges.” The goal is to minimize the total travel distance, reducing fuel consumption, emissions, and operational costs.</p>
     
@@ -155,7 +165,6 @@
         </ul>
     </div>
 </section>
-<script src="script.js"></script>
 
 </body>
 </html>
