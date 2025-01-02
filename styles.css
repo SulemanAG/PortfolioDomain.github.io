@@ -132,34 +132,9 @@ button:hover, .button:hover {
     color: #333;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideDown {
-    from {
-        transform: translateY(-100px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
+/* Remove Animations */
 section {
-    animation: fadeIn 1s ease-out;
+    /* Removed fadeIn animation */
 }
 
-/* Additional Animations */
-body:hover {
-    transform: scale(1.05);
-}
+/* Removed zoom-in effect on body */
