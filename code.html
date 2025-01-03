@@ -1,1 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City Algorithms - Suleman Agasimani</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+    <style>
+        :root {
+            --bg-color: #0a192f;
+            --text-color: #e0e0e0;
+            --header-bg: #1a73e8;
+            --section-bg: #172a45;
+            --highlight-color: #64ffda;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: var(--header-bg);
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        main {
+            padding: 3rem 0;
+        }
+
+        section {
+            background-color: var(--section-bg);
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            color: var(--highlight-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        pre {
+            background-color: #1e1e1e;
+            border-radius: 4px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+
+        code {
+            font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+        }
+
+        footer {
+            background-color: var(--section-bg);
+            color: var(--text-color);
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--section-bg);
+            color: var(--text-color);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--header-bg);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Smart City Algorithms</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="project.html">Projects</a>
+                <a href="learning.html">Learning Outcomes</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="description">
+            <h2>Description</h2>
+            <p>This C++ program implements various algorithms for smart city management. It provides solutions for different aspects of urban planning and optimization, including:</p>
+            <ul>
+                <li>Optimal Tourist Routes using graph algorithms</li>
+                <li>Menu Item Sorting using Quick Sort</li>
+                <li>Traffic Monitoring using Breadth-First Search (BFS)</li>
+                <li>Waste Management Route Optimization using Dijkstra's algorithm</li>
+                <li>Water Usage Analysis using Time Series</li>
+                <li>Internet Connectivity Optimization using Minimum Spanning Tree (MST)</li>
+            </ul>
+            <p>The program features a user-friendly menu interface, allowing users to select and run specific algorithms based on their needs. Each function takes user input to create and manipulate data structures relevant to its purpose, demonstrating practical applications of these algorithms in a smart city context.</p>
+        </section>
+
+        <section id="code">
+            <h2>Code Implementation</h2>
+            <pre><code class="language-cpp">
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+#include &lt;algorithm&gt;
+#include &lt;map&gt;
+#include &lt;string&gt;
+#include &lt;numeric&gt; // For accumulate function
+#include &lt;climits&gt; // For INT_MAX
+
+using namespace std;
+
+// Function for Optimal Tourist Routes (Graphs)
+void optimalTouristRoutes() {
+    cout &lt;&lt; "Optimal Tourist Routes using Graphs\n";
+    int n;
+    cout &lt;&lt; "Enter the number of nodes: ";
+    cin &gt;&gt; n;
+
+    vector&lt;vector&lt;int&gt;&gt; graph(n, vector&lt;int&gt;(n, 0));
+
+    cout &lt;&lt; "Enter the adjacency matrix (distance between nodes):\n";
+    for (int i = 0; i &lt; n; ++i) {
+        for (int j = 0; j &lt; n; ++j) {
+            cin &gt;&gt; graph[i][j];
+        }
+    }
+
+    cout &lt;&lt; "Optimal route (example): 0 -&gt; 1 -&gt; 3 -&gt; 2\n";
+}
+
+// Function for Menu Item Sorting (Quick Sort)
+void menuItemSorting() {
+    cout &lt;&lt; "Menu Item Sorting by Price or Popularity\n";
+    int n;
+    cout &lt;&lt; "Enter the number of menu items: ";
+    cin &gt;&gt; n;
+
+    vector&lt;pair&lt;string, int&gt;&gt; menu;
+    for (int i = 0; i &lt; n; ++i) {
+        string item;
+        int price;
+        cout &lt;&lt; "Enter item name and price: ";
+        cin &gt;&gt; item &gt;&gt; price;
+        menu.emplace_back(item, price);
+    }
+
+    sort(menu.begin(), menu.end(), [](pair&lt;string, int&gt; a, pair&lt;string, int&gt; b) {
+        return a.second &lt; b.second; // Sort by price (ascending)
+    });
+
+    cout &lt;&lt; "Sorted Menu:\n";
+    for (auto item : menu) {
+        cout &lt;&lt; item.first &lt;&lt; " - $" &lt;&lt; item.second &lt;&lt; "\n";
+    }
+}
+
+// Function for Traffic Monitoring (BFS)
+void trafficMonitoring() {
+    cout &lt;&lt; "Traffic Monitoring using BFS\n";
+    int n;
+    cout &lt;&lt; "Enter the number of nodes: ";
+    cin &gt;&gt; n;
+
+    vector&lt;vector&lt;int&gt;&gt; graph(n, vector&lt;int&gt;(n, 0));
+
+    cout &lt;&lt; "Enter the adjacency matrix (1 for connected, 0 for not connected):\n";
+    for (int i = 0; i &lt; n; ++i) {
+        for (int j = 0; j &lt; n; ++j) {
+            cin &gt;&gt; graph[i][j];
+        }
+    }
+
+    vector&lt;bool&gt; visited(n, false);
+    queue&lt;int&gt; q;
+    q.push(0);
+    visited[0] = true;
+    cout &lt;&lt; "BFS Order: ";
+    while (!q.empty()) {
+        int node = q.front();
+        q.pop();
+        cout &lt;&lt; node &lt;&lt; " ";
+        for (int i = 0; i &lt; n; ++i) {
+            if (graph[node][i] == 1 && !visited[i]) {
+                visited[i] = true;
+                q.push(i);
+            }
+        }
+    }
+    cout &lt;&lt; "\n";
+}
+
+// Function for Waste Management (Dijkstra's)
+void wasteManagement() {
+    cout &lt;&lt; "Waste Management Route Optimization using Dijkstra's\n";
+    int n, e;
+    cout &lt;&lt; "Enter the number of nodes and edges: ";
+    cin &gt;&gt; n &gt;&gt; e;
+
+    vector&lt;vector&lt;pair&lt;int, int&gt;&gt;&gt; graph(n);
+    cout &lt;&lt; "Enter the edges (format: node1 node2 weight):\n";
+    for (int i = 0; i &lt; e; ++i) {
+        int u, v, w;
+        cin &gt;&gt; u &gt;&gt; v &gt;&gt; w;
+        graph[u].emplace_back(v, w);
+    }
+
+    vector&lt;int&gt; dist(n, INT_MAX);
+    dist[0] = 0;
+    priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt;&gt;, greater&lt;&gt;&gt; pq;
+    pq.push({0, 0});
+
+    while (!pq.empty()) {
+        auto [cost, node] = pq.top();
+        pq.pop();
+        for (auto [next, weight] : graph[node]) {
+            if (dist[next] &gt; cost + weight) {
+                dist[next] = cost + weight;
+                pq.push({dist[next], next});
+            }
+        }
+    }
+
+    cout &lt;&lt; "Shortest distances from Node 0: ";
+    for (int d : dist) cout &lt;&lt; d &lt;&lt; " ";
+    cout &lt;&lt; "\n";
+}
+
+// Function for Water Usage Analysis (Time Series)
+void waterUsageAnalysis() {
+    cout &lt;&lt; "Water Usage Analysis using Time Series\n";
+    int n;
+    cout &lt;&lt; "Enter the number of usage entries: ";
+    cin &gt;&gt; n;
+
+    vector&lt;int&gt; usage(n);
+    cout &lt;&lt; "Enter the water usage data:\n";
+    for (int i = 0; i &lt; n; ++i) {
+        cin &gt;&gt; usage[i];
+    }
+
+    cout &lt;&lt; "Average Usage: "
+         &lt;&lt; accumulate(usage.begin(), usage.end(), 0) / usage.size()
+         &lt;&lt; "\n";
+}
+
+// Function for Internet Connectivity (Minimum Spanning Tree)
+void internetConnectivity() {
+    cout &lt;&lt; "Internet Connectivity Optimization using MST\n";
+    int n;
+    cout &lt;&lt; "Enter the number of nodes: ";
+    cin &gt;&gt; n;
+
+    vector&lt;vector&lt;int&gt;&gt; graph(n, vector&lt;int&gt;(n, 0));
+    cout &lt;&lt; "Enter the adjacency matrix (cost of edges):\n";
+    for (int i = 0; i &lt; n; ++i) {
+        for (int j = 0; j &lt; n; ++j) {
+            cin &gt;&gt; graph[i][j];
+        }
+    }
+
+    vector&lt;int&gt; key(n, INT_MAX);
+    vector&lt;bool&gt; inMST(n, false);
+    key[0] = 0;
+    int result = 0;
+
+    for (int i = 0; i &lt; n; ++i) {
+        int u = -1;
+        for (int v = 0; v &lt; n; ++v) {
+            if (!inMST[v] && (u == -1 || key[v] &lt; key[u])) {
+                u = v;
+            }
+        }
+
+        inMST[u] = true;
+        result += key[u];
+        for (int v = 0; v &lt; n; ++v) {
+            if (graph[u][v] && !inMST[v] && graph[u][v] &lt; key[v]) {
+                key[v] = graph[u][v];
+            }
+        }
+    }
+
+    cout &lt;&lt; "Total Cost of MST: " &lt;&lt; result &lt;&lt; "\n";
+}
+
+// Main Function
+int main() {
+    while (true) {
+        cout &lt;&lt; "\nChoose an option:\n";
+        cout &lt;&lt; "1. Optimal Tourist Routes\n";
+        cout &lt;&lt; "2. Menu Item Sorting\n";
+        cout &lt;&lt; "3. Traffic Monitoring\n";
+        cout &lt;&lt; "4. Waste Management\n";
+        cout &lt;&lt; "5. Water Usage Analysis\n";
+        cout &lt;&lt; "6. Internet Connectivity Optimization\n";
+        cout &lt;&lt; "7. Exit\n";
+
+        int choice;
+        cin &gt;&gt; choice;
+
+        switch (choice) {
+            case 1: optimalTouristRoutes(); break;
+            case 2: menuItemSorting(); break;
+            case 3: trafficMonitoring(); break;
+            case 4: wasteManagement(); break;
+            case 5: waterUsageAnalysis(); break;
+            case 6: internetConnectivity(); break;
+            case 7: return 0;
+            default: cout << "Invalid choice. Try again.\n";
+        }
+    }
+    return 0;
+}
+            </code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Suleman Agasimani. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.5s, transform 0.5s';
+                observer.observe(section);
+            });
+        });
+
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            if (document.body.classList.contains('light-mode')) {
+                themeToggle.innerHTML = '☀️';
+                document.documentElement.style.setProperty('--bg-color', '#f0f4f8');
+                document.documentElement.style.setProperty('--text-color', '#333333');
+                document.documentElement.style.setProperty('--section-bg', '#ffffff');
+            } else {
+                themeToggle.innerHTML = '🌙';
+                document.documentElement.style.setProperty('--bg-color', '#0a192f');
+                document.documentElement.style.setProperty('--text-color', '#e0e0e0');
+                document.documentElement.style.setProperty('--section-bg', '#172a45');
+            }
+        });
+    </script>
+</body>
+</html>
