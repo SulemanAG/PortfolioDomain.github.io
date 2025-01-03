@@ -3,224 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Projects Managed by Me</title>
-    <script src="script.js" defer></script>
+    <title>Projects Managed by Me - Suleman Agasimani</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #808080;  /* Grey background for default light mode */
+        :root {
+            --bg-color: #0a192f;
+            --text-color: #e0e0e0;
+            --header-bg: #1a73e8;
+            --section-bg: #172a45;
+            --highlight-color: #64ffda;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            transition: background-color 0.5s, color 0.5s; /* Smooth transition */
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         header {
-            background-color: #1a73e8;
-            color: black;
-            padding: 20px;
+            background-color: var(--header-bg);
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
             text-align: center;
         }
 
-        header nav {
-            text-align: center;
-            margin-top: 10px;
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
         }
 
-        header nav a {
-            color: black;
+        nav a {
+            color: #ffffff;
             text-decoration: none;
-            padding: 10px 20px;
-            font-size: 18px;
-            margin: 0 15px;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
-        header nav a:hover {
-            background-color: #ddd;
-            border-radius: 5px;
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         main {
-            margin: 20px;
+            padding: 3rem 0;
         }
 
         section {
-            background-color: white;
-            margin-bottom: 20px;
-            padding: 20px;
+            background-color: var(--section-bg);
+            margin-bottom: 2rem;
+            padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.5s, color 0.5s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         h2 {
-            color: #333;
-            font-size: 24px;
+            color: var(--highlight-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
         }
 
         p {
-            font-size: 16px;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        /* Light Mode Styles */
-        body.light-mode {
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        section.light-mode {
-            background-color: #fff;
-        }
-
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #121212;  /* Dark background */
-            color: #e0e0e0;
-        }
-
-        section.dark-mode {
-            background-color: #2a2a2a;
-            color: #e0e0e0;
-        }
-
-        /* Style for spacing and color consistency */
-        .how-to-implement,
-        .problem-arising {
-            color: #555; /* Same color as explanation text */
-            font-size: 16px;
-            line-height: 1.6;
-            margin-top: 15px; /* Space between sections */
+            margin-bottom: 1rem;
         }
 
         ul {
-            margin-top: 10px;
-            padding-left: 20px;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
         }
 
-        /* Theme Toggle Button */
+        .how-to-implement, .problem-arising {
+            margin-top: 1.5rem;
+        }
+
+        footer {
+            background-color: var(--section-bg);
+            color: var(--text-color);
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
         .theme-toggle {
-            position: fixed; /* Fixed position */
-            bottom: 20px; /* Distance from bottom */
-            right: 20px; /* Distance from right */
-            background: rgba(255, 255, 255, 0.1); /* Background for button */
-            color: #e0e0e0; /* Button text color */
-            border: none; /* No border */
-            border-radius: 50%; /* Rounded button */
-            width: 40px; /* Width */
-            height: 40px; /* Height */
-            display: flex; /* Flexbox for alignment */
-            justify-content: center; /* Center icon horizontally */
-            align-items: center; /* Center icon vertically */
-            cursor: pointer; /* Pointer cursor on hover */
-            transition: background 0.3s; /* Smooth background transition */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--section-bg);
+            color: var(--text-color);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .theme-toggle:hover {
-            background: rgba(255, 255, 255, 0.2); /* Brighten on hover */
+            background-color: var(--header-bg);
         }
-
     </style>
 </head>
-<body class="light-mode">
-<header>
-    <h1>Projects Managed by Me</h1>
-    <nav>
-        <ui>
-            <li><a href="index.html">Back to Profile</a></li>
-            <li><a href="project.html">Projects</a></li>
-            <li><a href="learning.html">Learning Outcomes</a></li>
-        </ui>
-    </nav>
-    <nav>
-        <a href="#optimizing-connectivity">Optimizing Connectivity</a>
-        <a href="#optimizing-waste">Optimizing Waste Management</a>
-        <a href="index.html">Back to Portfolio</a>
-    </nav>
-</header>
-
-<main>
-    <section id="optimizing-connectivity">
-        <h2>Optimizing City-Wide Internet Connectivity</h2>
-        <p><strong>Explanation:</strong> In smart cities, internet connectivity is essential to support a range of services, from traffic management to health and education. The goal of this project is to ensure that all residents of the city have access to high-speed internet by strategically placing Wi-Fi hotspots. This can be achieved through the application of Minimum Spanning Tree (MST) algorithms, which help minimize the total infrastructure cost while maintaining optimal coverage of the urban area.</p>
-        
-        <div class="how-to-implement">
-            <p><strong>How to Implement:</strong></p>
-            <ul>
-                <li><strong>Mapping the Area:</strong> Identify key locations across the city that need coverage, such as public areas, schools, hospitals, and high-traffic zones. Use geographic data systems (GIS) to map out the city’s roads, buildings, and potential hotspots.</li>
+<body>
+    <header>
+        <div class="container">
+            <h1>Projects Managed by Me</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="project.html"class="active">Projects</a>
+                <a href="learning.html">Learning Outcomes</a>
                 
-                <li><strong>Modeling as a Graph:</strong> Treat the problem as a graph, where each node represents a potential location for a Wi-Fi hotspot, and edges represent the cost (distance or infrastructure) between these locations.</li>
-                
-                <li><strong>Choosing the Algorithm:</strong> Use either Prim’s or Kruskal’s algorithm to determine the MST. Prim’s algorithm starts with a node and explores the least-cost edges to connect all nodes, while Kruskal’s algorithm sorts all edges by weight and selects the least-cost edges to form the MST.</li>
-                
-                <li><strong>Placing Hotspots:</strong> The selected locations based on the MST will then be the ideal spots for Wi-Fi installations. These locations should be in close proximity to areas with high foot traffic while minimizing redundancy.</li>
-                
-                <li><strong>Dynamic Updates with Traffic Data:</strong> To improve the network and adapt to changing conditions (e.g., construction, population growth, seasonal events), the system should integrate real-time traffic data, adjusting hotspot placements as needed.</li>
-            </ul>
+            </nav>
         </div>
+    </header>
 
-        <div class="problem-arising">
-            <p><strong>Problem Arising During Implementation:</strong></p>
-            <ul>
-                <li><strong>Data Quality Issues:</strong> The accuracy of GIS data can sometimes be unreliable, especially when mapping older areas or regions with incomplete records, which could affect hotspot placement accuracy.</li>
-                
-                <li><strong>Infrastructure Limitations:</strong> Existing city infrastructure may not always support the installation of necessary equipment like fiber-optic cables, resulting in higher costs or delays.</li>
-                
-                <li><strong>High Traffic Areas:</strong> Identifying ideal locations for hotspots in densely populated or high-traffic areas may result in congestion, affecting network performance and user experience.</li>
-                
-                <li><strong>Integration with Other Services:</strong> Real-time traffic data and other dynamic factors may be challenging to integrate effectively, leading to adjustments in hotspot placements that might be hard to manage or implement efficiently.</li>
-            </ul>
+    <main class="container">
+        <section id="optimizing-connectivity">
+            <h2>Optimizing City-Wide Internet Connectivity</h2>
+            <p><strong>Explanation:</strong> In smart cities, internet connectivity is essential to support a range of services, from traffic management to health and education. The goal of this project is to ensure that all residents of the city have access to high-speed internet by strategically placing Wi-Fi hotspots. This can be achieved through the application of Minimum Spanning Tree (MST) algorithms, which help minimize the total infrastructure cost while maintaining optimal coverage of the urban area.</p>
+            
+            <div class="how-to-implement">
+                <h3>How to Implement:</h3>
+                <ul>
+                    <li><strong>Mapping the Area:</strong> Identify key locations across the city that need coverage, such as public areas, schools, hospitals, and high-traffic zones. Use geographic data systems (GIS) to map out the city's roads, buildings, and potential hotspots.</li>
+                    <li><strong>Modeling as a Graph:</strong> Treat the problem as a graph, where each node represents a potential location for a Wi-Fi hotspot, and edges represent the cost (distance or infrastructure) between these locations.</li>
+                    <li><strong>Choosing the Algorithm:</strong> Use either Prim's or Kruskal's algorithm to determine the MST. Prim's algorithm starts with a node and explores the least-cost edges to connect all nodes, while Kruskal's algorithm sorts all edges by weight and selects the least-cost edges to form the MST.</li>
+                    <li><strong>Placing Hotspots:</strong> The selected locations based on the MST will then be the ideal spots for Wi-Fi installations. These locations should be in close proximity to areas with high foot traffic while minimizing redundancy.</li>
+                    <li><strong>Dynamic Updates with Traffic Data:</strong> To improve the network and adapt to changing conditions (e.g., construction, population growth, seasonal events), the system should integrate real-time traffic data, adjusting hotspot placements as needed.</li>
+                </ul>
+            </div>
+
+            <div class="problem-arising">
+                <h3>Problems Arising During Implementation:</h3>
+                <ul>
+                    <li><strong>Data Quality Issues:</strong> The accuracy of GIS data can sometimes be unreliable, especially when mapping older areas or regions with incomplete records, which could affect hotspot placement accuracy.</li>
+                    <li><strong>Infrastructure Limitations:</strong> Existing city infrastructure may not always support the installation of necessary equipment like fiber-optic cables, resulting in higher costs or delays.</li>
+                    <li><strong>High Traffic Areas:</strong> Identifying ideal locations for hotspots in densely populated or high-traffic areas may result in congestion, affecting network performance and user experience.</li>
+                    <li><strong>Integration with Other Services:</strong> Real-time traffic data and other dynamic factors may be challenging to integrate effectively, leading to adjustments in hotspot placements that might be hard to manage or implement efficiently.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="optimizing-waste">
+            <h2>Optimizing Waste Management Routes</h2>
+            <p><strong>Explanation:</strong> Efficient waste management is a critical component of a sustainable urban environment. This project aims to optimize the waste collection process by applying Dijkstra's Algorithm, a well-known graph search algorithm that calculates the shortest paths from a source to all other nodes. In this case, the waste collection trucks are the "nodes," and the roads connecting the collection points are the "edges." The goal is to minimize the total travel distance, reducing fuel consumption, emissions, and operational costs.</p>
+            
+            <div class="how-to-implement">
+                <h3>How to Implement:</h3>
+                <ul>
+                    <li><strong>Graph Representation:</strong> The city's road network is represented as a graph, where each intersection or waste collection point is a node, and each road is an edge with a weight corresponding to the distance or travel time.</li>
+                    <li><strong>Running Dijkstra's Algorithm:</strong> To find the optimal routes, Dijkstra's algorithm is applied to calculate the shortest paths from the waste collection depot to all the waste collection points across the city. By calculating the shortest path for each waste collection vehicle, the total travel distance and fuel consumption are minimized.</li>
+                    <li><strong>Incorporating Real-Time Data:</strong> Real-time traffic data is incorporated into the algorithm to adjust routes dynamically. This is crucial because traffic conditions, road closures, or accidents can significantly impact the efficiency of waste collection. The system can update the optimal route to avoid congestion or other delays.</li>
+                </ul>
+            </div>
+
+            <div class="problem-arising">
+                <h3>Problems Arising During Implementation:</h3>
+                <ul>
+                    <li><strong>Real-Time Data Integration:</strong> The integration of real-time traffic data can be complicated, especially when different sources of data are inconsistent or unavailable.</li>
+                    <li><strong>Complexity of Urban Roads:</strong> The complexity of urban roads, with one-way streets, road closures, and pedestrian zones, can increase the difficulty in finding the shortest path for waste trucks.</li>
+                    <li><strong>Variable Traffic Conditions:</strong> Traffic conditions can change unexpectedly, making it hard to update the routes in real-time or plan the routes in advance.</li>
+                    <li><strong>Operational Constraints:</strong> Waste collection routes may need to accommodate other logistical factors such as vehicle capacity, timing restrictions, and legal regulations, which can make the solution less straightforward.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Suleman Agasimani. All rights reserved.</p>
         </div>
-    </section>
+    </footer>
 
-    <section id="optimizing-waste">
-        <h2>Optimizing Waste Management Routes</h2>
-        <p><strong>Explanation:</strong> Efficient waste management is a critical component of a sustainable urban environment. This project aims to optimize the waste collection process by applying Dijkstra’s Algorithm, a well-known graph search algorithm that calculates the shortest paths from a source to all other nodes. In this case, the waste collection trucks are the “nodes,” and the roads connecting the collection points are the “edges.” The goal is to minimize the total travel distance, reducing fuel consumption, emissions, and operational costs.</p>
-        
-        <div class="how-to-implement">
-            <p><strong>How to Implement:</strong></p>
-            <ul>
-                <li><strong>Graph Representation:</strong> The city’s road network is represented as a graph, where each intersection or waste collection point is a node, and each road is an edge with a weight corresponding to the distance or travel time.</li>
-                
-                <li><strong>Running Dijkstra’s Algorithm:</strong> To find the optimal routes, Dijkstra’s algorithm is applied to calculate the shortest paths from the waste collection depot to all the waste collection points across the city. By calculating the shortest path for each waste collection vehicle, the total travel distance and fuel consumption are minimized.</li>
-                
-                <li><strong>Incorporating Real-Time Data:</strong> Real-time traffic data is incorporated into the algorithm to adjust routes dynamically. This is crucial because traffic conditions, road closures, or accidents can significantly impact the efficiency of waste collection. The system can update the optimal route to avoid congestion or other delays.</li>
-            </ul>
-        </div>
+    <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
 
-        <div class="problem-arising">
-            <p><strong>Problem Arising During Implementation:</strong></p>
-            <ul>
-                <li><strong>Real-Time Data Integration:</strong> The integration of real-time traffic data can be complicated, especially when different sources of data are inconsistent or unavailable.</li>
-                
-                <li><strong>Complexity of Urban Roads:</strong> The complexity of urban roads, with one-way streets, road closures, and pedestrian zones, can increase the difficulty in finding the shortest path for waste trucks.</li>
-                
-                <li><strong>Variable Traffic Conditions:</strong> Traffic conditions can change unexpectedly, making it hard to update the routes in real-time or plan the routes in advance.</li>
-                
-                <li><strong>Operational Constraints:</strong> Waste collection routes may need to accommodate other logistical factors such as vehicle capacity, timing restrictions, and legal regulations, which can make the solution less straightforward.</li>
-            </ul>
-        </div>
-    </section>
-</main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
 
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <p>&copy; 2024 Suleman Agasimani. All rights reserved.</p>
-    </div>
-</footer>
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.5s, transform 0.5s';
+                observer.observe(section);
+            });
+        });
 
-<!-- Theme Toggle Button -->
-<div class="theme-toggle" onclick="toggleTheme()">
-    <i class="fas fa-moon"></i>
-</div>
-
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            if (document.body.classList.contains('light-mode')) {
+                themeToggle.innerHTML = '☀️';
+                document.documentElement.style.setProperty('--bg-color', '#f0f4f8');
+                document.documentElement.style.setProperty('--text-color', '#333333');
+                document.documentElement.style.setProperty('--section-bg', '#ffffff');
+            } else {
+                themeToggle.innerHTML = '🌙';
+                document.documentElement.style.setProperty('--bg-color', '#0a192f');
+                document.documentElement.style.setProperty('--text-color', '#e0e0e0');
+                document.documentElement.style.setProperty('--section-bg', '#172a45');
+            }
+        });
+    </script>
 </body>
 </html>
