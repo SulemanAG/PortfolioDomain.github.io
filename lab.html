@@ -154,12 +154,239 @@ void insert(Node*& root, int value) {
             <p>Use balanced trees (AVL or Red-Black Trees) to ensure O(log n) complexity for search, insert, and delete operations.</p>
         </section>
 
-        <!-- Additional sections for DFS & BFS, Heap, Sorting Algorithms, Search Algorithms, and Graph Algorithms would go here -->
+        <section id="dfs-bfs">
+            <h2>3. DFS and BFS</h2>
 
+            <h3>DFS Algorithm</h3>
+            <pre>
+                <code>
+void DFS(Graph& g, int start, vector& visited) {
+    visited[start] = true;
+    cout << start << " ";
+    for (int neighbor : g[start]) {
+        if (!visited[neighbor]) {
+            DFS(g, neighbor, visited);
+        }
+    }
+}
+                </code>
+            </pre>
+
+            <h3>BFS Algorithm</h3>
+            <pre>
+                <code>
+void BFS(Graph& g, int start) {
+    queue&lt;int&gt; q;
+    vector&lt;bool&gt; visited(g.size(), false);
+    q.push(start);
+    visited[start] = true;
+
+    while (!q.empty()) {
+        int node = q.front();
+        q.pop();
+        cout << node << " ";
+        for (int neighbor : g[node]) {
+            if (!visited[neighbor]) {
+                q.push(neighbor);
+                visited[neighbor] = true;
+            }
+        }
+    }
+}
+                </code>
+            </pre>
+
+            <h3>Challenges in Learning</h3>
+            <ul>
+                <li><strong>DFS:</strong> Understanding recursion and its stack implications.</li>
+                <li><strong>BFS:</strong> Implementing queue-based traversal efficiently.</li>
+            </ul>
+
+            <h3>Challenges in Real-World Applications</h3>
+            <ul>
+                <li><strong>DFS:</strong> Used in puzzle solving and connected component identification.</li>
+                <li><strong>BFS:</strong> Used in shortest path problems in unweighted graphs.</li>
+            </ul>
+
+            <h3>Efficiency Determination</h3>
+            <p>Choose DFS for exhaustive searches and BFS for level-order traversal or shortest path in unweighted graphs.</p>
+        </section>
+
+        <section id="heap">
+            <h2>4. Heap</h2>
+
+            <h3>Algorithm</h3>
+            <pre>
+                <code>
+void heapify(vector&lt;int&gt;& heap, int n, int i) {
+    int largest = i;
+    int left = 2 * i + 1;
+    int right = 2 * i + 2;
+
+    if (left < n && heap[left] > heap[largest]) largest = left;
+    if (right < n && heap[right] > heap[largest]) largest = right;
+
+    if (largest != i) {
+        swap(heap[i], heap[largest]);
+        heapify(heap, n, largest);
+    }
+}
+
+void heapSort(vector&lt;int&gt;& arr) {
+    int n = arr.size();
+    for (int i = n / 2 - 1; i >= 0; i--) heapify(arr, n, i);
+    for (int i = n - 1; i > 0; i--) {
+        swap(arr[0], arr[i]);
+        heapify(arr, i, 0);
+    }
+}
+                </code>
+            </pre>
+
+            <h3>Challenges in Learning</h3>
+            <ul>
+                <li>Understanding heap properties and the heapify process.</li>
+            </ul>
+
+            <h3>Challenges in Real-World Applications</h3>
+            <ul>
+                <li>Applications in priority queues and job scheduling.</li>
+            </ul>
+
+            <h3>Efficiency Determination</h3>
+            <p>Heap Sort provides O(n log n) complexity and is useful when space is limited.</p>
+        </section>
+
+        <!-- New Section for Search Algorithms -->
+        <section id="searching">
+            <h2>6. Search Algorithms</h2>
+
+            <h3>a) Brute Force:</h3>
+            <pre>
+                <code>
+void bruteForceSearch(string text, string pattern) {
+    for (int i = 0; i <= text.size() - pattern.size(); i++) {
+        int j;
+        for (j = 0; j < pattern.size(); j++) {
+            if (text[i + j] != pattern[j]) {
+                break;
+            }
+        }
+        if (j == pattern.size()) {
+            cout << "Pattern found at index " << i << endl;
+        }
+    }
+}
+                </code>
+            </pre>
+            <h3>Challenges in Learning:</h3>
+            <ul>
+                <li>Simple implementation but computationally inefficient.</li>
+            </ul>
+            <h3>Challenges in Real-World Applications:</h3>
+            <ul>
+                <li>Inapplicable for large texts or patterns due to time inefficiency.</li>
+            </ul>
+            <h3>Efficiency Determination:</h3>
+            <p>Has O(m × n) complexity; other algorithms are preferred for efficiency.</p>
+
+            <h3>b) Boyer-Moore:</h3>
+            <pre>
+                <code>
+void boyerMooreSearch(string text, string pattern) {
+    vector badChar(256, -1);
+    for (int i = 0; i < pattern.size(); i++) {
+        badChar[pattern[i]] = i;
+    }
+
+    int shift = 0;
+    while (shift <= text.size() - pattern.size()) {
+        int j = pattern.size() - 1;
+        while (j >= 0 && pattern[j] == text[shift + j]) {
+            j--;
+        }
+        if (j < 0) {
+            cout << "Pattern found at index " << shift << endl;
+            shift += (shift + pattern.size() < text.size()) ? pattern.size() - badChar[text[shift + pattern.size()]] : 1;
+        } else {
+            shift += max(1, j - badChar[text[shift + j]]);
+        }
+    }
+}
+                </code>
+            </pre>
+            <h3>Challenges in Learning:</h3>
+            <ul>
+                <li>Requires understanding of bad character and good suffix rules.</li>
+            </ul>
+            <h3>Challenges in Real-World Applications:</h3>
+            <ul>
+                <li>Complex preprocessing but efficient for large patterns.</li>
+            </ul>
+            <h3>Efficiency Determination:</h3>
+            <p>Best for large-scale pattern matching with a worst-case O(m + n) complexity.</p>
+        </section>
+
+        <!-- New Section for Graph Algorithms -->
+        <section id="graph">
+            <h2>7. Graph Algorithms</h2>
+
+            <h3>DFS Algorithm (Graph Representation):</h3>
+            <pre>
+                <code>
+void DFS(Graph& g, int start, vector&lt;bool&gt; &visited) {
+    visited[start] = true;
+    cout << start << " ";
+    for (int neighbor : g[start]) {
+        if (!visited[neighbor]) {
+            DFS(g, neighbor, visited);
+        }
+    }
+}
+                </code>
+            </pre>
+
+            <h3>BFS Algorithm (Graph Representation):</h3>
+            <pre>
+                <code>
+void BFS(Graph& g, int start) {
+    queue&lt;int&gt; q;
+    vector&lt;bool&gt; visited(g.size(), false);
+    q.push(start);
+    visited[start] = true;
+
+    while (!q.empty()) {
+        int node = q.front();
+        q.pop();
+        cout << node << " ";
+        for (int neighbor : g[node]) {
+            if (!visited[neighbor]) {
+                q.push(neighbor);
+                visited[neighbor] = true;
+            }
+        }
+    }
+}
+                </code>
+            </pre>
+
+            <h3>Challenges in Learning</h3>
+            <ul>
+                <li>Understanding graph traversal strategies and how BFS/DFS impact time complexity.</li>
+            </ul>
+
+            <h3>Challenges in Real-World Applications</h3>
+            <ul>
+                <li>Handling large and sparse graphs efficiently.</li>
+            </ul>
+
+            <h3>Efficiency Determination</h3>
+            <p>DFS and BFS are both O(V + E), where V is the number of vertices and E is the number of edges.</p>
+        </section>
     </div>
+
     <footer>
-        <p>&copy; 2025 Suleman Agasimani All rights reserved.</p>
+        <p>&copy; 2025 Suleman. All rights reserved.</p>
     </footer>
 </body>
 </html>
-
