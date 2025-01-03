@@ -3,200 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning - Suleman Agasimani Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <title>Learning - Kwin City Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-color: #0a192f;
+            --text-color: #e0e0e0;
+            --header-bg: #1a73e8;
+            --section-bg: #172a45;
+            --highlight-color: #64ffda;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #121212; /* Dark background for dark mode */
-            color: #e0e0e0; /* Light text for visibility */
-            margin: 0;
-            padding: 20px;
-            transition: background-color 0.5s, color 0.5s; /* Smooth transition */
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         header {
+            background-color: var(--header-bg);
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
             text-align: center;
-            margin-bottom: 20px;
         }
 
         nav {
-            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
         }
 
         nav a {
-            color: #e0e0e0;
+            color: #ffffff;
             text-decoration: none;
-            padding: 10px 15px;
-            margin: 0 5px;
-            border: 1px solid transparent;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
             border-radius: 5px;
-            transition: background-color 0.3s, border-color 0.3s;
+            transition: background-color 0.3s;
         }
 
         nav a:hover {
-            background-color: #1a73e8;
-            border-color: #1a73e8;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        main {
+            padding: 3rem 0;
         }
 
         section {
-            background-color: #2a2a2a; /* Darker background for sections */
-            padding: 20px;
-            margin-bottom: 20px;
+            background-color: var(--section-bg);
+            margin-bottom: 2rem;
+            padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         h2 {
-            color: #f0c674; /* Different color for section headers */
-            font-size: 26px;
+            color: var(--highlight-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
         }
 
         h3 {
-            color: #ffcc00; /* Accent color for subsections */
+            color: #f0c674;
+            font-size: 1.4rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
         }
 
         ul {
-            margin-left: 20px; /* Indentation for lists */
-            list-style-type: disc; /* Bullet points for clarity */
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .button {
             display: inline-block;
-            background-color: #1a73e8; /* Button background color */
-            color: #ffffff; /* Button text color */
-            padding: 10px 15px;
+            background-color: var(--highlight-color);
+            color: var(--bg-color);
+            padding: 0.5rem 1rem;
             text-decoration: none;
             border-radius: 5px;
-            margin-top: 10px;
             transition: background-color 0.3s;
+            font-weight: bold;
         }
 
         .button:hover {
-            background-color: #005bb5; /* Darker on hover */
+            background-color: #45c7b3;
         }
 
-        /* Theme Toggle Button */
+        footer {
+            background-color: var(--section-bg);
+            color: var(--text-color);
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
         .theme-toggle {
-            position: fixed; /* Fixed position */
-            bottom: 20px; /* Distance from bottom */
-            right: 20px; /* Distance from right */
-            background: rgba(255, 255, 255, 0.1); /* Background for button */
-            color: #e0e0e0; /* Button text color */
-            border: none; /* No border */
-            border-radius: 50%; /* Rounded button */
-            width: 40px; /* Width */
-            height: 40px; /* Height */
-            display: flex; /* Flexbox for alignment */
-            justify-content: center; /* Center icon horizontally */
-            align-items: center; /* Center icon vertically */
-            cursor: pointer; /* Pointer cursor on hover */
-            transition: background 0.3s; /* Smooth background transition */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--section-bg);
+            color: var(--text-color);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .theme-toggle:hover {
-            background: rgba(255, 255, 255, 0.2); /* Brighten on hover */
+            background-color: var(--header-bg);
         }
     </style>
 </head>
-<body class="dark-mode">
-
-    <!-- Header Section -->
+<body>
     <header>
-        <h1>Learning - Kwin City Project</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="project.html">Projects</a></li>
-                <li><a href="learning.html" class="active">Learning Outcomes</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <nav>
-            <a href="#learning-courses">Learning During the Courses</a>
-            <a href="#challenges">Challenges</a>
-            <a href="#outcomes">Learning Outcomes</a>
-            <a href="index.html">Back to Portfolio</a>
-        </nav>
+        <div class="container">
+            <h1>Learning - Kwin City Project</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="project.html">Projects</a>
+                <a href="learning.html">Learning Outcomes</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Section 1: Learning During the Courses -->
-    <section id="learning-courses">
-        <h2>1) Learning During the Courses</h2>
-        <p>The course on Design and Analysis of Algorithms provided in-depth knowledge of algorithmic strategies to solve computational problems efficiently. The insights gained were pivotal in conceptualizing and implementing the Kwin City project.</p>
-        
-        <h3>Topics Covered:</h3>
-        <ul>
-            <li>Introduction to Algorithms</li>
-            <li>Divide and Conquer</li>
-            <li>Greedy Algorithms (e.g., Prim's Algorithm, Kruskal's Algorithm)</li>
-            <li>Dynamic Programming (e.g., Knapsack Problem, Longest Common Subsequence)</li>
-            <li>Backtracking</li>
-            <li>Graph Algorithms (e.g., Dijkstra's Algorithm, Bellman-Ford, BFS, DFS)</li>
-            <li>Sorting and Searching Algorithms (e.g., QuickSort, MergeSort, Binary Search)</li>
-            <li>String Matching Algorithms</li>
-            <li>NP-Complete Problems</li>
-        </ul>
-        <a href="Algo.html" class="button" target="_blank">Click to Explore All Algorithms</a>
-    </section>
+    <main class="container">
+        <section id="learning-courses">
+            <h2>1. Learning During the Courses</h2>
+            <p>The course on Design and Analysis of Algorithms provided in-depth knowledge of algorithmic strategies to solve computational problems efficiently. The insights gained were pivotal in conceptualizing and implementing the Kwin City project.</p>
+            
+            <h3>Topics Covered:</h3>
+            <ul>
+                <li>Introduction to Algorithms</li>
+                <li>Divide and Conquer</li>
+                <li>Greedy Algorithms (e.g., Prim's Algorithm, Kruskal's Algorithm)</li>
+                <li>Dynamic Programming (e.g., Knapsack Problem, Longest Common Subsequence)</li>
+                <li>Backtracking</li>
+                <li>Graph Algorithms (e.g., Dijkstra's Algorithm, Bellman-Ford, BFS, DFS)</li>
+                <li>Sorting and Searching Algorithms (e.g., QuickSort, MergeSort, Binary Search)</li>
+                <li>String Matching Algorithms</li>
+                <li>NP-Complete Problems</li>
+            </ul>
+            <a href="Algo.html" class="button" target="_blank">Explore All Algorithms</a>
+        </section>
 
-    <!-- Section 2: Challenges -->
-    <section id="challenges">
-        <h2>2) Challenges During the Courses and Kwin City Implementation</h2>
-        <h3>Challenges Faced During the Course:</h3>
-        <ul>
-            <li><strong>Complex Concepts:</strong> Topics like dynamic programming and NP-completeness were initially difficult to grasp.</li>
-            <li><strong>Time Management:</strong> Balancing coursework with other academic commitments posed challenges.</li>
-            <li><strong>Debugging:</strong> Recursive algorithms, in particular, were prone to errors that required meticulous debugging.</li>
-            <li><strong>Optimization:</strong> Ensuring efficient solutions added complexity to practical implementations.</li>
-        </ul>
+        <section id="challenges">
+            <h2>2. Challenges During the Courses and Kwin City Implementation</h2>
+            <h3>Challenges Faced During the Course:</h3>
+            <ul>
+                <li><strong>Complex Concepts:</strong> Topics like dynamic programming and NP-completeness were initially difficult to grasp.</li>
+                <li><strong>Time Management:</strong> Balancing coursework with other academic commitments posed challenges.</li>
+                <li><strong>Debugging:</strong> Recursive algorithms, in particular, were prone to errors that required meticulous debugging.</li>
+                <li><strong>Optimization:</strong> Ensuring efficient solutions added complexity to practical implementations.</li>
+            </ul>
 
-        <h3>Challenges Faced During Kwin City Implementation:</h3>
-        <ul>
-            <li><strong>Data Integration:</strong> Integrating diverse datasets for traffic and utility planning was demanding.</li>
-            <li><strong>Real-World Constraints:</strong> Adapting theoretical models to practical limitations required creativity and teamwork.</li>
-            <li><strong>Algorithm Customization:</strong> Tailoring algorithms like Dijkstra’s and Prim’s for Kwin City’s unique needs was essential.</li>
-            <li><strong>Scalability:</strong> Designing systems to accommodate future growth was a significant focus area.</li>
-        </ul>
-        <p>Despite these challenges, teamwork and structured problem-solving were key to overcoming obstacles.</p>
-    </section>
+            <h3>Challenges Faced During Kwin City Implementation:</h3>
+            <ul>
+                <li><strong>Data Integration:</strong> Integrating diverse datasets for traffic and utility planning was demanding.</li>
+                <li><strong>Real-World Constraints:</strong> Adapting theoretical models to practical limitations required creativity and teamwork.</li>
+                <li><strong>Algorithm Customization:</strong> Tailoring algorithms like Dijkstra's and Prim's for Kwin City's unique needs was essential.</li>
+                <li><strong>Scalability:</strong> Designing systems to accommodate future growth was a significant focus area.</li>
+            </ul>
+            <p>Despite these challenges, teamwork and structured problem-solving were key to overcoming obstacles.</p>
+        </section>
 
-    <!-- Section 3: Learning Outcomes -->
-    <section id="outcomes">
-        <h2>3) Learning Outcomes</h2>
-        <p>The course and project provided valuable skills and insights:</p>
-        <ul>
-            <li>Ability to select appropriate algorithms for specific problems.</li>
-            <li>In-depth understanding of algorithmic complexity and optimization.</li>
-            <li>Hands-on experience with real-world data applications.</li>
-            <li>Enhanced problem-solving and algorithmic thinking skills.</li>
-        </ul>
+        <section id="outcomes">
+            <h2>3. Learning Outcomes</h2>
+            <p>The course and project provided valuable skills and insights:</p>
+            <ul>
+                <li>Ability to select appropriate algorithms for specific problems.</li>
+                <li>In-depth understanding of algorithmic complexity and optimization.</li>
+                <li>Hands-on experience with real-world data applications.</li>
+                <li>Enhanced problem-solving and algorithmic thinking skills.</li>
+            </ul>
 
-        <h3>Applications in Kwin City Project:</h3>
-        <ul>
-            <li>Graph Algorithms like <strong>Dijkstra’s Algorithm</strong> optimized transportation systems.</li>
-            <li>Greedy Algorithms like <strong>Prim’s Algorithm</strong> improved infrastructure planning.</li>
-            <li>Dynamic Programming enabled efficient resource allocation.</li>
-            <li>Sorting and Searching streamlined data management in city services.</li>
-        </ul>
-    </section>
+            <h3>Applications in Kwin City Project:</h3>
+            <ul>
+                <li>Graph Algorithms like <strong>Dijkstra's Algorithm</strong> optimized transportation systems.</li>
+                <li>Greedy Algorithms like <strong>Prim's Algorithm</strong> improved infrastructure planning.</li>
+                <li>Dynamic Programming enabled efficient resource allocation.</li>
+                <li>Sorting and Searching streamlined data management in city services.</li>
+            </ul>
+        </section>
+    </main>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Suleman Agasimani. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 Suleman Agasimani. All rights reserved.</p>
+        </div>
     </footer>
 
-    <!-- Theme Toggle Button -->
-    <div class="theme-toggle" onclick="toggleTheme()">
-        <i class="fas fa-moon"></i>
-    </div>
+    <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.5s, transform 0.5s';
+                observer.observe(section);
+            });
+        });
+
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            if (document.body.classList.contains('light-mode')) {
+                themeToggle.innerHTML = '☀️';
+                document.documentElement.style.setProperty('--bg-color', '#f0f4f8');
+                document.documentElement.style.setProperty('--text-color', '#333333');
+                document.documentElement.style.setProperty('--section-bg', '#ffffff');
+            } else {
+                themeToggle.innerHTML = '🌙';
+                document.documentElement.style.setProperty('--bg-color', '#0a192f');
+                document.documentElement.style.setProperty('--text-color', '#e0e0e0');
+                document.documentElement.style.setProperty('--section-bg', '#172a45');
+            }
+        });
+    </script>
 </body>
 </html>
