@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Reflections</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            background: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        code {
+            display: block;
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lab Reflections</h1>
+    </header>
+    <nav>
+        <a href="#time-complexity">Time Complexity</a>
+        <a href="#bst">Binary Search Tree</a>
+        <a href="#dfs-bfs">DFS & BFS</a>
+        <a href="#heap">Heap</a>
+        <a href="#sorting">Sorting</a>
+        <a href="#searching">Search Algorithms</a>
+        <a href="#graph">Graph Algorithms</a>
+        <a href="theory.html">Theory Reflections</a>
+        <a href="index.html">Back to Portfolio</a>
+    </nav>
+    <div class="container">
+        <a href="index.html" class="back-link">Back to Portfolio</a>
+
+        <section id="time-complexity">
+            <h2>1. Time Complexity Analysis</h2>
+            <h3>Algorithm:</h3>
+            <code>
+void analyzeComplexity(int n) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            // Some operation O(1)
+        }
+    }
+}
+            </code>
+            <h3>Challenges in Learning:</h3>
+            <ul>
+                <li>Understanding mathematical notations like Big-O, Theta, and Omega.</li>
+                <li>Analyzing nested loops and recursion complexities.</li>
+            </ul>
+            <h3>Challenges in Real-World Applications:</h3>
+            <ul>
+                <li>Mapping theoretical complexities to practical scenarios.</li>
+                <li>Optimizing algorithms for real-world data constraints.</li>
+            </ul>
+            <h3>Efficiency Determination:</h3>
+            <p>Compare multiple algorithms based on their asymptotic complexities and practical performance on given data.</p>
+        </section>
+
+        <section id="bst">
+            <h2>2. Binary Search Tree (BST)</h2>
+            <h3>Algorithm:</h3>
+            <code>
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+    Node(int val) : data(val), left(nullptr), right(nullptr) {}
+};
+
+void insert(Node*& root, int value) {
+    if (!root) {
+        root = new Node(value);
+        return;
+    }
+    if (value < root->data) {
+        insert(root->left, value);
+    } else {
+        insert(root->right, value);
+    }
+}
+            </code>
+            <h3>Challenges in Learning:</h3>
+            <ul>
+                <li>Understanding rotations in AVL or Red-Black Trees.</li>
+                <li>Balancing trees for optimal performance.</li>
+            </ul>
+            <h3>Challenges in Real-World Applications:</h3>
+            <ul>
+                <li>Optimizing databases for fast search and retrieval.</li>
+                <li>Handling large datasets in balanced trees.</li>
+            </ul>
+            <h3>Efficiency Determination:</h3>
+            <p>Use balanced trees (AVL or Red-Black Trees) to ensure O(log n) complexity for search, insert, and delete operations.</p>
+        </section>
+
+        <!-- Additional sections for DFS & BFS, Heap, Sorting Algorithms, Search Algorithms, and Graph Algorithms would go here -->
+
+    </div>
+    <footer>
+        <p>&copy; 2025 Suleman Agasimani All rights reserved.</p>
+    </footer>
+</body>
+</html>
 
