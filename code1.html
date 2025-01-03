@@ -229,54 +229,97 @@ int main() {
            <section id="code">
             <h2>Code Implementation for Internect Connectivity</h2>
             <pre><code class="language-cpp">
- // Code 2: Optimizing City-Wide Internet Connectivity
-#include <iostream>
+ #include <iostream>
 #include <vector>
-#include <climits>
+#include <algorithm>
+#include <numeric>
+
 using namespace std;
 
-// Function to optimize internet connectivity using Minimum Spanning Tree (MST)
-void optimizeCityInternetConnectivity() {
-    int n;
-    cout << "Enter the number of locations (nodes): ";
-    cin >> n;
+// Structure to represent an edge
+struct Edge {
+    int u, v, weight;
+    Edge(int u, int v, int weight) : u(u), v(v), weight(weight) {}
+};
 
-    vector<vector<int>> graph(n, vector<int>(n, 0));
-    cout << "Enter the adjacency matrix (cost of connecting nodes, use 0 if not connected):\n";
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < n; ++j) {
-            cin >> graph[i][j];
-        }
+// Disjoint Set Union (Union-Find) data structure
+class DSU {
+private:
+    vector<int> parent, rank;
+public:
+    DSU(int n) {
+        parent.resize(n);
+        rank.resize(n, 0);
+        iota(parent.begin(), parent.end(), 0);  // Initialize parent to be itself
     }
 
-    vector<int> key(n, INT_MAX);
-    vector<bool> inMST(n, false);
-    key[0] = 0;
-    int result = 0;
+    int find(int u) {
+        if (parent[u] != u)
+            parent[u] = find(parent[u]);  // Path compression
+        return parent[u];
+    }
 
-    for (int count = 0; count < n - 1; ++count) {
-        int u = -1;
-        for (int v = 0; v < n; ++v) {
-            if (!inMST[v] && (u == -1 || key[v] < key[u])) {
-                u = v;
-            }
-        }
+    void unionSets(int u, int v) {
+        int rootU = find(u);
+        int rootV = find(v);
 
-        inMST[u] = true;
-        result += key[u];
-
-        for (int v = 0; v < n; ++v) {
-            if (graph[u][v] && !inMST[v] && graph[u][v] < key[v]) {
-                key[v] = graph[u][v];
+        if (rootU != rootV) {
+            // Union by rank
+            if (rank[rootU] > rank[rootV])
+                parent[rootV] = rootU;
+            else if (rank[rootU] < rank[rootV])
+                parent[rootU] = rootV;
+            else {
+                parent[rootV] = rootU;
+                rank[rootU]++;
             }
         }
     }
+};
 
-    cout << "Total cost for optimized connectivity: " << result << "\n";
+// Kruskal's Algorithm to find the Minimum Spanning Tree (MST)
+vector<Edge> kruskalMST(int n, vector<Edge>& edges) {
+    // Sort edges based on weight
+    sort(edges.begin(), edges.end(), [](const Edge& a, const Edge& b) {
+        return a.weight < b.weight;
+    });
+
+    DSU dsu(n);
+    vector<Edge> mst;
+
+    for (const Edge& edge : edges) {
+        int u = edge.u, v = edge.v;
+        // If u and v are in different sets, include this edge in the MST
+        if (dsu.find(u) != dsu.find(v)) {
+            mst.push_back(edge);
+            dsu.unionSets(u, v);
+        }
+    }
+    return mst;
 }
 
 int main() {
-    optimizeCityInternetConnectivity();
+    int n, m;
+    cout << "Enter number of nodes (locations): ";
+    cin >> n;
+    cout << "Enter number of edges (possible connections): ";
+    cin >> m;
+
+    vector<Edge> edges;
+    cout << "Enter the edges (u, v, weight):\n";
+    for (int i = 0; i < m; i++) {
+        int u, v, weight;
+        cin >> u >> v >> weight;
+        edges.push_back(Edge(u, v, weight));
+    }
+
+    vector<Edge> mst = kruskalMST(n, edges);
+
+    cout << "\nMinimum Spanning Tree (MST) for Wi-Fi Hotspot Placement:\n";
+    for (const Edge& edge : mst) {
+        cout << "Hotspot " << edge.u << " <--> Hotspot " << edge.v << " with cost " << edge.weight << endl;
+    }
+
     return 0;
 }
 
