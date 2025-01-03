@@ -1,1 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Suleman Agasimani</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0a192f;
+            --text-color: #e0e0e0;
+            --header-bg: #1a73e8;
+            --section-bg: #172a45;
+            --highlight-color: #64ffda;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: var(--header-bg);
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        main {
+            padding: 3rem 0;
+        }
+
+        section {
+            background-color: var(--section-bg);
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            color: var(--highlight-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            font-size: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--highlight-color);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input, textarea {
+            padding: 0.5rem;
+            border-radius: 4px;
+            border: 1px solid var(--text-color);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            background-color: var(--highlight-color);
+            color: var(--bg-color);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45c7b3;
+        }
+
+        #comments {
+            margin-top: 2rem;
+        }
+
+        .comment {
+            background-color: var(--bg-color);
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        #likeButton {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: transparent;
+            color: var(--text-color);
+            border: 1px solid var(--text-color);
+        }
+
+        #likeButton:hover {
+            background-color: var(--highlight-color);
+            color: var(--bg-color);
+        }
+
+        footer {
+            background-color: var(--section-bg);
+            color: var(--text-color);
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--section-bg);
+            color: var(--text-color);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--header-bg);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Contact Me</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="project.html">Projects</a>
+                <a href="learning.html">Learning Outcomes</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="social-media">
+            <h2>Connect with Me</h2>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/suleman-agasimani-553074295/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/SulemanAG" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </section>
+
+        <section id="email-form">
+            <h2>Send Me a Message</h2>
+            <form id="contactForm">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <section id="like-section">
+            <h2>Like This Page</h2>
+            <button id="likeButton">
+                <i class="fas fa-heart"></i> <span id="likeCount">0</span> Likes
+            </button>
+        </section>
+
+        <section id="comment-section">
+            <h2>Leave a Comment</h2>
+            <form id="commentForm">
+                <input type="text" id="commentName" name="commentName" placeholder="Your Name" required>
+                <textarea id="commentText" name="commentText" placeholder="Your Comment" rows="3" required></textarea>
+                <button type="submit">Post Comment</button>
+            </form>
+            <div id="comments"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Suleman Agasimani. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+
+    <script>
+        // Email Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+
+        // Like Button Functionality
+        let likeCount = 0;
+        document.getElementById('likeButton').addEventListener('click', function() {
+            likeCount++;
+            document.getElementById('likeCount').textContent = likeCount;
+        });
+
+        // Comment System
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('commentName').value;
+            const text = document.getElementById('commentText').value;
+            const commentDiv = document.createElement('div');
+            commentDiv.className = 'comment';
+            commentDiv.innerHTML = `<strong>${name}</strong>: ${text}`;
+            document.getElementById('comments').prepend(commentDiv);
+            this.reset();
+        });
+
+        // Theme Toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            if (document.body.classList.contains('light-mode')) {
+                themeToggle.innerHTML = '☀️';
+                document.documentElement.style.setProperty('--bg-color', '#f0f4f8');
+                document.documentElement.style.setProperty('--text-color', '#333333');
+                document.documentElement.style.setProperty('--section-bg', '#ffffff');
+            } else {
+                themeToggle.innerHTML = '🌙';
+                document.documentElement.style.setProperty('--bg-color', '#0a192f');
+                document.documentElement.style.setProperty('--text-color', '#e0e0e0');
+                document.documentElement.style.setProperty('--section-bg', '#172a45');
+            }
+        });
+
+        // Fade-in Animation for Sections
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.5s, transform 0.5s';
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
