@@ -175,56 +175,81 @@
         <section id="code">
             <h2>Code Implementation for Optimizing Waste Management Routes</h2>
             <pre><code class="language-cpp">
-// Code 1: Optimizing Waste Management Routes
 #include <iostream>
 #include <vector>
 #include <queue>
 #include <climits>
+
 using namespace std;
 
-// Function to optimize waste management routes using Dijkstra's Algorithm
-void optimizeWasteManagementRoutes() {
-    int n, e;
-    cout << "Enter the number of locations (nodes) and routes (edges): ";
-    cin >> n >> e;
+// Structure to represent an edge
+struct Edge {
+    int v, weight;
+    Edge(int v, int weight) : v(v), weight(weight) {}
+};
 
-    vector<vector<pair<int, int>>> graph(n);
-    cout << "Enter the routes in the format: source destination weight (e.g., 0 1 4):\n";
-    for (int i = 0; i < e; ++i) {
-        int u, v, w;
-        cin >> u >> v >> w;
-        graph[u].emplace_back(v, w);
-        graph[v].emplace_back(u, w); // Assuming undirected graph
-    }
-
-    vector<int> dist(n, INT_MAX);
-    dist[0] = 0;
-    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> pq;
-    pq.push({0, 0});
+// Function to implement Dijkstra's Algorithm
+vector<int> dijkstra(int n, int source, const vector<vector<Edge>>& adj) {
+    vector<int> dist(n, INT_MAX);  // Distance vector to store shortest distances
+    dist[source] = 0;  // Distance to source is 0
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq; // Min-heap for selecting the node with the smallest distance
+    pq.push({0, source});
 
     while (!pq.empty()) {
-        auto [cost, node] = pq.top();
+        int u = pq.top().second; // Get the node with the minimum distance
         pq.pop();
-        for (auto [next, weight] : graph[node]) {
-            if (dist[next] > cost + weight) {
-                dist[next] = cost + weight;
-                pq.push({dist[next], next});
+
+        // Traverse all adjacent nodes of u
+        for (const Edge& edge : adj[u]) {
+            int v = edge.v;
+            int weight = edge.weight;
+
+            // If a shorter path to v is found, update the distance and push it to the priority queue
+            if (dist[u] + weight < dist[v]) {
+                dist[v] = dist[u] + weight;
+                pq.push({dist[v], v});
             }
         }
     }
-
-    cout << "Shortest distances from the central hub (node 0):\n";
-    for (int i = 0; i < n; ++i) {
-        cout << "Location " << i << ": " << dist[i] << "\n";
-    }
+    return dist;
 }
 
 int main() {
-    optimizeWasteManagementRoutes();
+    int n, m;
+    cout << "Enter number of nodes (collection points): ";
+    cin >> n;
+    cout << "Enter number of roads (edges): ";
+    cin >> m;
+
+    vector<vector<Edge>> adj(n);
+
+    cout << "Enter the roads (u, v, weight) where weight is the distance or travel time:\n";
+    for (int i = 0; i < m; i++) {
+        int u, v, weight;
+        cin >> u >> v >> weight;
+        adj[u].push_back(Edge(v, weight));
+        adj[v].push_back(Edge(u, weight)); // Assuming bidirectional roads
+    }
+
+    int depot;
+    cout << "Enter the depot (source) node: ";
+    cin >> depot;
+
+    // Run Dijkstra's algorithm from the depot to find the shortest paths to all collection points
+    vector<int> shortestPaths = dijkstra(n, depot, adj);
+
+    cout << "\nShortest paths from the depot to all other collection points:\n";
+    for (int i = 0; i < n; i++) {
+        if (shortestPaths[i] == INT_MAX) {
+            cout << "Node " << i << ": No path\n";
+        } else {
+            cout << "Node " << i << ": " << shortestPaths[i] << " units of distance/time\n";
+        }
+    }
+
     return 0;
 }
-
-            </code></pre>
+   </code></pre>
         </section>
            <section id="code">
             <h2>Code Implementation for Internect Connectivity</h2>
