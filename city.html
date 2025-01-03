@@ -4,141 +4,179 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Overview - Kwin City (Smart City)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js" defer></script>
     <style>
-        body {
-            font-family: 'Poppins', sans-serif; /* Clean font style */
-            background-color: #121212; /* Dark background */
-            color: #e0e0e0; /* Light text color */
+        :root {
+            --bg-color: #0a192f;
+            --text-color: #e0e0e0;
+            --header-bg: #1a73e8;
+            --section-bg: #172a45;
+            --highlight-color: #64ffda;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            transition: background-color 0.5s, color 0.5s; /* Smooth transition */
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         header {
-            background-color: #1a73e8; /* Header color */
-            color: black; /* Text color for header */
-            padding: 20px;
+            background-color: var(--header-bg);
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
             text-align: center;
         }
 
+        h1 span {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--highlight-color);
+        }
+
         nav ul {
-            list-style-type: none; /* Remove default list styling */
-            padding: 0;
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
         }
 
         nav ul li {
-            display: inline; /* Inline list items */
-            margin: 0 10px;
+            margin: 0 1rem;
         }
 
         nav ul li a {
-            color: black; /* Link color in nav */
-            text-decoration: none; /* No underline */
-            padding: 10px 20px;
-            font-size: 18px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
         }
 
-        nav ul li a:hover,
-        nav ul li a.active {
-            background-color: #ddd; /* Background for hovered and active links */
-            border-radius: 5px; /* Rounded corners */
+        nav ul li a:hover {
+            color: var(--highlight-color);
         }
 
         main {
-            margin: 20px; /* Space around main content */
+            padding: 3rem 0;
         }
 
         section {
-            background-color: #2a2a2a; /* Section background */
-            margin-bottom: 20px;
-            padding: 20px;
+            background-color: var(--section-bg);
+            margin-bottom: 2rem;
+            padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            transition: background-color 0.5s, color 0.5s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        h1, h2 {
-            color: #f0c674; /* Heading color */
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
-        h1 span {
-            display: block; /* Separate Kwin City */
-            font-size: 24px; /* Font size for city name */
+        h2 {
+            color: var(--highlight-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
         }
 
         p {
-            font-size: 16px; /* Font size for paragraphs */
-            line-height: 1.6; /* Improved line spacing */
+            margin-bottom: 1rem;
         }
 
         table {
-            width: 100%; /* Full width for table */
-            border-collapse: collapse; /* No gaps between cells */
-            margin: 20px 0; /* Margin around table */
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: var(--bg-color);
         }
 
         th, td {
-            padding: 10px;
-            text-align: left; /* Align text to left */
-            border-bottom: 1px solid #ddd; /* Bottom border for table cells */
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #2d3748;
         }
 
         th {
-            background-color: #3b82f6; /* Header color for table */
-            color: #ffffff; /* Text color for header */
+            background-color: #2d3748;
+            color: var(--highlight-color);
         }
 
         .graph-container {
-            margin-top: 20px; /* Margin on top of graph container */
+            margin-top: 2rem;
+            background-color: var(--bg-color);
+            padding: 1rem;
+            border-radius: 8px;
         }
 
         footer {
-            text-align: center; /* Center-align footer text */
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #1a1a1a; /* Background color for footer */
-            color: #e0e0e0; /* Text color for footer */
-        }
-
-        footer p {
-            margin: 0; /* Remove margin */
+            background-color: var(--section-bg);
+            color: var(--text-color);
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
         }
 
         .theme-toggle {
-            position: fixed; /* Fixed position */
-            bottom: 20px; /* Distance from bottom */
-            right: 20px; /* Distance from right */
-            background: rgba(255, 255, 255, 0.1); /* Background for button */
-            color: #e0e0e0; /* Button text color */
-            border: none; /* No border */
-            border-radius: 50%; /* Rounded button */
-            width: 40px; /* Width */
-            height: 40px; /* Height */
-            display: flex; /* Flexbox for alignment */
-            justify-content: center; /* Center icon horizontally */
-            align-items: center; /* Center icon vertically */
-            cursor: pointer; /* Pointer cursor on hover */
-            transition: background 0.3s; /* Smooth background transition */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--section-bg);
+            color: var(--text-color);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .theme-toggle:hover {
-            background: rgba(255, 255, 255, 0.2); /* Brighten on hover */
+            background-color: var(--header-bg);
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
-<body class="dark-mode">
-    <!-- Header Section -->
+<body>
     <header>
         <div class="container">
             <h1>Project Overview <span>Kwin City</span></h1>
             <nav>
                 <ul>
+                    <li><a href="#welcome">Welcome</a></li>
                     <li><a href="#land-distribution">Land Distribution</a></li>
-                    <li><a href="#budget-distribution">Budget Allocation</a></li>
                     <li><a href="index.html">Back to Portfolio</a></li>
                 </ul>
             </nav>
@@ -146,19 +184,18 @@
     </header>
 
     <main>
-        <!-- Welcome Section -->
         <section id="welcome" class="fade-in">
             <div class="container">
                 <h2>Welcome to Smart City Kwin City</h2>
                 <div class="city-details">
                     <p>
-                        <strong style="color: #facc15;">City Name:</strong> <span style="color: #ffffff;">Kwin City</span><br>
-                        <strong style="color: #facc15;">Taluk:</strong> <span style="color: #ffffff;">Bidar</span><br>
-                        <strong style="color: #facc15;">State:</strong> <span style="color: #ffffff;">Telangana</span><br>
-                        <strong style="color: #facc15;">Country:</strong> <span style="color: #ffffff;">India</span><br>
-                        <strong style="color: #facc15;">Pincode:</strong> <span style="color: #ffffff;">500076</span><br>
-                        <strong style="color: #facc15;">STD Code:</strong> <span style="color: #ffffff;">08462</span><br>
-                        <strong style="color: #facc15;">Time Zone:</strong> <span style="color: #ffffff;">GMT+5:30</span>
+                        <strong style="color: var(--highlight-color);">City Name:</strong> <span>Kwin City</span><br>
+                        <strong style="color: var(--highlight-color);">Taluk:</strong> <span>Bidar</span><br>
+                        <strong style="color: var(--highlight-color);">State:</strong> <span>Telangana</span><br>
+                        <strong style="color: var(--highlight-color);">Country:</strong> <span>India</span><br>
+                        <strong style="color: var(--highlight-color);">Pincode:</strong> <span>500076</span><br>
+                        <strong style="color: var(--highlight-color);">STD Code:</strong> <span>08462</span><br>
+                        <strong style="color: var(--highlight-color);">Time Zone:</strong> <span>GMT+5:30</span>
                     </p>
 
                     <p>
@@ -168,12 +205,10 @@
             </div>
         </section>
 
-        <!-- Land Distribution and Budget -->
         <section id="land-distribution" class="fade-in">
             <div class="container">
                 <h2>Land Distribution and Budget</h2>
 
-                <!-- Table -->
                 <table>
                     <thead>
                         <tr>
@@ -248,7 +283,6 @@
                     </tbody>
                 </table>
 
-                <!-- Bar Graphs for Land Distribution and Budget -->
                 <div class="graph-container">
                     <h2 style="text-align: center;">Land Distribution (in %)</h2>
                     <canvas id="landDistributionChart"></canvas>
@@ -262,20 +296,15 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2024 Suleman Agasimani. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Theme Toggle Button -->
-    <div class="theme-toggle" onclick="toggleTheme()">
-        <i class="fas fa-moon"></i>
-    </div>
+    <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
 
     <script>
-        // Data for Land Distribution
         const landLabels = [
             "Green Spaces", 
             "Residential Areas", 
@@ -288,8 +317,34 @@
         ];
         const landData = [25, 18, 15, 10, 8, 5, 6, 13];
 
-        const landDistributionConfig = {
+        const chartConfig = {
             type: 'bar',
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    title: {
+                        display: true,
+                        color: '#e0e0e0',
+                        font: { size: 16 }
+                    }
+                },
+                scales: {
+                    x: { 
+                        title: { display: true, color: '#e0e0e0' },
+                        ticks: { color: '#e0e0e0' }
+                    },
+                    y: { 
+                        title: { display: true, color: '#e0e0e0' },
+                        ticks: { color: '#e0e0e0' },
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
+        const landDistributionConfig = {
+            ...chartConfig,
             data: {
                 labels: landLabels,
                 datasets: [{
@@ -299,69 +354,119 @@
                         '#3b82f6', '#06b6d4', '#facc15', '#ef4444', 
                         '#22c55e', '#f97316', '#6366f1', '#14b8a6'
                     ],
-                    borderColor: '#000',
+                    borderColor: '#0a192f',
                     borderWidth: 1
                 }]
             },
             options: {
-                responsive: true,
+                ...chartConfig.options,
                 plugins: {
-                    legend: { display: false },
+                    ...chartConfig.options.plugins,
                     title: {
-                        display: true,
+                        ...chartConfig.options.plugins.title,
                         text: 'Land Distribution in %'
                     }
                 },
                 scales: {
-                    x: { title: { display: true, text: 'Land Categories' } },
-                    y: { 
-                        title: { display: true, text: 'Percentage (%)' },
-                        beginAtZero: true
+                    ...chartConfig.options.scales,
+                    x: { 
+                        ...chartConfig.options.scales.x,
+                        title: { ...chartConfig.options.scales.x.title, text: 'Land Categories' }
+                    },
+                    y: {
+                        ...chartConfig.options.scales.y,
+                        title: { ...chartConfig.options.scales.y.title, text: 'Percentage (%)' }
                     }
                 }
             }
         };
 
-        // Data for Budget Distribution
-        const budgetData = [...landData]; // Assuming the same data structure
-
         const budgetDistributionConfig = {
-            type: 'bar',
+            ...chartConfig,
             data: {
                 labels: landLabels,
                 datasets: [{
                     label: 'Budget Distribution (%)',
-                    data: budgetData,
+                    data: landData,
                     backgroundColor: [
                         '#3b82f6', '#06b6d4', '#facc15', '#ef4444', 
                         '#22c55e', '#f97316', '#6366f1', '#14b8a6'
                     ],
-                    borderColor: '#000',
+                    borderColor: '#0a192f',
                     borderWidth: 1
                 }]
             },
             options: {
-                responsive: true,
+                ...chartConfig.options,
                 plugins: {
-                    legend: { display: false },
+                    ...chartConfig.options.plugins,
                     title: {
-                        display: true,
+                        ...chartConfig.options.plugins.title,
                         text: 'Budget Allocation in %'
                     }
                 },
                 scales: {
-                    x: { title: { display: true, text: 'Categories' } },
+                    ...chartConfig.options.scales,
+                    x: { 
+                        ...chartConfig.options.scales.x,
+                        title: { ...chartConfig.options.scales.x.title, text: 'Categories' }
+                    },
                     y: {
-                        title: { display: true, text: 'Percentage (%)' },
-                        beginAtZero: true
+                        ...chartConfig.options.scales.y,
+                        title: { ...chartConfig.options.scales.y.title, text: 'Percentage (%)' }
                     }
                 }
             }
         };
 
-        // Create Charts
         new Chart(document.getElementById('landDistributionChart'), landDistributionConfig);
         new Chart(document.getElementById('budgetDistributionChart'), budgetDistributionConfig);
+
+        // Add fade-in effect to sections
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        // Theme toggle functionality
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            if (document.body.classList.contains('light-mode')) {
+                themeToggle.innerHTML = '☀️';
+                document.documentElement.style.setProperty('--bg-color', '#f0f4f8');
+                document.documentElement.style.setProperty('--text-color', '#333333');
+                document.documentElement.style.setProperty('--section-bg', '#ffffff');
+            } else {
+                themeToggle.innerHTML = '🌙';
+                document.documentElement.style.setProperty('--bg-color', '#0a192f');
+                document.documentElement.style.setProperty('--text-color', '#e0e0e0');
+                document.documentElement.style.setProperty('--section-bg', '#172a45');
+            }
+            updateChartColors();
+        });
+
+        function updateChartColors() {
+            const textColor = getComputedStyle(document.documentElement).getPropertyValue('--text-color').trim();
+            [landDistributionConfig, budgetDistributionConfig].forEach(config => {
+                config.options.plugins.title.color = textColor;
+                config.options.scales.x.title.color = textColor;
+                config.options.scales.x.ticks.color = textColor;
+                config.options.scales.y.title.color = textColor;
+                config.options.scales.y.ticks.color = textColor;
+            });
+            Chart.instances.forEach(chart => chart.update());
+        }
     </script>
 </body>
 </html>
