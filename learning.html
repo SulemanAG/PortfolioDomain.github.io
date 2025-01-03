@@ -12,6 +12,7 @@
             --header-bg: #1a73e8;
             --section-bg: #172a45;
             --highlight-color: #64ffda;
+            --border-color: rgba(255, 255, 255, 0.3);
         }
 
         * {
@@ -35,7 +36,7 @@
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
             color: #ffffff;
             text-align: center;
@@ -112,6 +113,72 @@
             margin: 0 auto;
         }
 
+        section {
+            background-color: var(--section-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s, box-shadow 0.3s;
+        }
+
+        section.active {
+            opacity: 1;
+            transform: translateY(0);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            margin: 1rem 0;
+        }
+
+        ul li {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .button {
+            background-color: var(--highlight-color);
+            color: #ffffff;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #52d4a2;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            padding: 0.5rem;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+        }
+
+        .theme-toggle:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -148,7 +215,7 @@
                 <li>String Matching Algorithms</li>
                 <li>NP-Complete Problems</li>
             </ul>
-            <a href="Algo.html" class="button" target="_blank">Explore All Algorithms</a>
+            <a href="Algo.html" class="button" >Explore All Algorithms</a>
         </section>
 
         <section id="challenges">
@@ -205,16 +272,12 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.classList.add('active');
                     }
                 });
             }, { threshold: 0.1 });
 
             sections.forEach(section => {
-                section.style.opacity = 0;
-                section.style.transform = 'translateY(20px)';
-                section.style.transition = 'opacity 0.5s, transform 0.5s';
                 observer.observe(section);
             });
         });
